@@ -32,11 +32,11 @@ public class Director
 	    
 		
 		
-		public void 
+		
 		
 		public void roleCasting()
 		{
-			
+			setNoOfActors((int) (Math.random()*5)+1));
 		}
 		
 		public void sceneSelection()

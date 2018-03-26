@@ -41,16 +41,16 @@ class Scene
  {
 	private String dialogue;
 	
-	 public void setScene1(String scene1)
+	 public void setDialogue(String dialogue)
 	 {
-		 this.scene1 = scene1;
+		 this.dialogue = dialogue;
 	 }	 
-	 public String getScene1()
+	 public String getDialogue()
 	 {
-		 return scene1;
+		 return dialogue;
 	 }
 	 
-	 
+	 public void set
 	 
 	 
  }	
