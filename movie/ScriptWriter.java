@@ -2,7 +2,8 @@ package com.lxisoft.moviescript.movie;
 public class ScriptWriter
 {
 	private String scriptWriterName;
-	private Script script;
+	private ScreenPlay screenPlay;
+	private ArrayList<String> dialogueBook = new ArrayList<String>();
 	
 	 public void setScriptWriterName(String scriptWriterName)
 	  {
@@ -12,49 +13,42 @@ public class ScriptWriter
 	   {
 		 return scriptWriterName;  
 	   }
-	  public void setScript(Script script)
+	  public void setScreenPlay(ScreenPlay screenPlay)
 	   {
-		 this.script = script;  
+		 this.screenPlay = screenPlay;  
 	   }	  
-	  public Script getScript()
+	  public ScreenPlay getScreenPlay()
 	   {
-		return script;  
+		return screenPlay;  
 	   }	  
+	  public void setDialogueBook(ArrayList<String> dialogueBook)
+	  {
+		  this.dialogueBook = dialogueBook;
+	  }
+	  public ArrayList<String> getDialogueBook()
+	  {
+		  return dialogueBook;
+	  }
 	 
+	  public ScriptWriter()
+	  {
+		  dialogueBook.add("");
+		  dialogueBook.add("");
+		  dialogueBook.add("");
+		  dialogueBook.add("");
+		  dialogueBook.add("");
+		  dialogueBook.add("");
+		  dialogueBook.add("");
+		  dialogueBook.add("");
+		  dialogueBook.add("");
+	  }
+      public void createScript()
+	  {
+		  
+		  setScreenPlay(new ScreenPlay());
+		  getScreenPlay().createScenes(dialogueBook);
+			  
+	  }
 
-class Script
-{
-   private Scene scenes;
-   
-   public void setScenes(Scene  scenes)
-    {
-	   this.scenes = scenes;   
-    }
-   public Scene getScenes()
-    {
-	 return scenes;   
-    }
-   
-}	 
-	
-class Scene
- {
-	private String dialogue;
-	
-	 public void setDialogue(String dialogue)
-	 {
-		 this.dialogue = dialogue;
-	 }	 
-	 public String getDialogue()
-	 {
-		 return dialogue;
-	 }
-	 
-	 public void set
-	 
-	 
- }	
- 
-	   
 
 }

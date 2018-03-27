@@ -4,7 +4,7 @@ public class Movie
 	private String movieName;
 	private Director director;
 	private ScriptWriter scriptwriter;
-	private Actor actor;
+
 	
 	  public void setMovieName(String movieName)
 	   {
@@ -30,14 +30,7 @@ public class Movie
 	  {
 		  return scriptwriter;
 	  }
-	  public void setActor(Actor actor)
-	  {
-		  this.actor = actor; 
-	  }
-	  public Actor getActor()
-	  {
-		  return actor;
-	  }
+	  
 
 	  
 	  
@@ -56,7 +49,9 @@ public class Movie
 			                           
 			 getDirector().setDirectorName("SHAJI KAILAS");
 			 System.out.print("                            Director Name: "+getDirector().getDirectorName()+"                           \n");
-
-          }
+             getScriptWriter().setScriptWriterName("RANJITH");
+			 System.out.print("                            ScriptWriter Name: "+getScriptWriter().getScriptWriterName()+"                           \n");
+               
+		  }
 
 }
