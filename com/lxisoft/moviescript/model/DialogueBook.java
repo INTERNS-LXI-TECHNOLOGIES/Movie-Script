@@ -1,37 +1,37 @@
 public class DialogueBook{
 	
-	private String[] comicList= {"c1","c2"}, romanticList= {"r1","r2"}, heroicList= {"h1c","h2"}, villainousList= {"v1","v2"};
-
-	public String[] getComicList() {
-		return comicList;
+	private String[] comicArray, romanticArray, heroicArray, villainousArray;
+	
+	public DialogBook(String[] comicArray, String[] romanticArray, String[] heroicArray, String[] villainousArray){
+		this.comicArray = comicArray;
+		this.romanticArray = romanticArray;
+		this.heroicArray = heroicArray;
+		this.villainousArray = villainousArray;
 	}
 
-	public void setComicList(String[] comicList) {
-		this.comicList = comicList;
+	public String[] getComicArray() {
+		return comicArray;
 	}
-
-	public String[] getRomanticList() {
-		return romanticList;
+	public void setComicArray(String[] comicArray) {
+		this.comicArray = comicArray;
 	}
-
-	public void setRomanticList(String[] romanticList) {
-		this.romanticList = romanticList;
+	public String[] getRomanticArray() {
+		return romanticArray;
 	}
-
-	public String[] getHeroicList() {
-		return heroicList;
+	public void setRomanticArray(String[] romanticArray) {
+		this.romanticArray = romanticArray;
 	}
-
-	public void setHeroicList(String[] heroicList) {
-		this.heroicList = heroicList;
+	public String[] getHeroicArray() {
+		return heroicArray;
 	}
-
-	public String[] getVillainousList() {
-		return villainousList;
+	public void setHeroicArray(String[] heroicArray) {
+		this.heroicArray = heroicArray;
 	}
-
-	public void setVillainousList(String[] villainousList) {
-		this.villainousList = villainousList;
+	public String[] getVillainousArray() {
+		return villainousArray;
+	}
+	public void setVillainousArray(String[] villainousArray) {
+		this.villainousArray = villainousArray;
 	}
 	
 }
