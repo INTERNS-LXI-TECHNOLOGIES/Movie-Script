@@ -1,11 +1,11 @@
-package com.lxisoft.moviescript.script;
-import java.util.ArryList;
+package com.lxisoft.moviescript.movie;
+import java.util.ArrayList;
 public class Scene{
 	
-	Array
 	
 	
-	public void setScene1()
+	
+	public void setScene1(){
 	System.out.println("wwrtyui");
 	}
 }

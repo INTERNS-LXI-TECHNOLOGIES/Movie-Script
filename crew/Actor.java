@@ -1,7 +1,7 @@
 package com.lxisoft.moviescript.crew;
 public class Actor{
 	private String actorName;
-	private String characterName;
+	private Character character;
 	
 	public void setActorName(String actorName){
 		this.actorName=actorName;
@@ -11,7 +11,7 @@ public class Actor{
 	}
 	
 	public void setCharacterName(String characterName){
-		this.characteraName=CharaterName;
+		this.characterName=characterName;
 	}
 	public String getCharacterName(){
 		return characterName;
