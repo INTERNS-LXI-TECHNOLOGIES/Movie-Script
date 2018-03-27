@@ -6,6 +6,15 @@ public class Script{
 	private ArrayList<Scene> scenes=new ArrayList<Scene>();
 	
 	
+	public void setScenes(){
+		
+		
+		
+		
+	}
+	
+	
+	
 	
 	
 	
