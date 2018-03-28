@@ -1,3 +1,5 @@
+package com.lxisoft.moviescript.model;
+
 public class DialogueBook{
 	
 	private String[] comicArray, romanticArray, heroicArray, villainousArray;

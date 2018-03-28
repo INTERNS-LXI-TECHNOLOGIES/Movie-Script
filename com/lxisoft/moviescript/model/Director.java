@@ -1,3 +1,5 @@
+package com.lxisoft.moviescript.model;
+
 public class Director{
 	
 	private String name;
@@ -14,9 +16,5 @@ public class Director{
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	//Others
-	public void setMovieName(){}
-	public void assignActors(){}
 
 }

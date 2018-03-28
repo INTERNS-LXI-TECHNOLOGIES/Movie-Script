@@ -1,8 +1,11 @@
+package com.lxisoft.moviescript.model;
+import java.util.List;
+
 public class Script{
 
 	private List<Scene> sceneList;
 	
-	public List<Scene> getSceneList() {
+	public List<Scene> getSceneList()	{
 		return sceneList;
 	}
 	public void setSceneList(List<Scene> sceneList) {

@@ -1,3 +1,5 @@
+package com.lxisoft.moviescript.model;
+import java.util.List;
 
 public class Movie {
 	

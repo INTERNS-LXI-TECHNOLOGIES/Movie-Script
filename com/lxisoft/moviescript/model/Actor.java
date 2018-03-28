@@ -1,12 +1,12 @@
+package com.lxisoft.moviescript.model;
+
 public class Actor{
 
 	private String realName;
 	private String characterName;
 	private String role;
 	
-	public Actor(){
-		
-	}
+	public Actor(){}
 	
 	public Actor(String characterName, String role){
 		this.characterName = characterName;

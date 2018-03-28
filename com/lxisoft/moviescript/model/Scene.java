@@ -1,3 +1,6 @@
+package com.lxisoft.moviescript.model;
+import java.util.List;
+
 public class Scene{
 
 	private int number;

@@ -1,7 +1,10 @@
+package com.lxisoft.moviescript.model;
+
 public class Action{
 
 	private String characterName, dialogue;
 
+	//Getters and Setters
 	public String getCharacterName() {
 		return characterName; 
 	}
@@ -15,7 +18,10 @@ public class Action{
 		this.dialogue = dialogue;
 	}
 
-
-
+	//To String
+	@Override
+	public String toString(){
+		return characterName+": "+dialogue;		
+	}
 
 }

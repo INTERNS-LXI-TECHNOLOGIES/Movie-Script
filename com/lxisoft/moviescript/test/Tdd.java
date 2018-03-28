@@ -1,3 +1,5 @@
+package com.lxisoft.moviescript.test
+import com.lxisoft.moviescript.controller.MovieController;
 
 public class Tdd {
 	
@@ -10,6 +12,8 @@ public class Tdd {
 		movieController.createDialogueBook();
 		movieController.setCharacters();
 		movieController.createScript();
-		
+		movieController.assignActors();
+		movieController.createMovie();
+		movieController.displayScript();
 	}
 }
