@@ -4,7 +4,8 @@ public class DirectorController
 {
 	Director director;
 	ScriptWriter scriptWriter;
-	ArrayList<Actor> actors;
+	ScriptWriterController scriptWriterController;
+	ArrayList<Actor> actors=new ArrayList<Actor>();
 	Scanner scan = new Scanner(System.in);
 	
 	public Director createDirector()
@@ -43,16 +44,20 @@ public class DirectorController
 			Actor act = new Actor();
 			System.out.println("Enter Actor Name");
 			String name = scan.next();
-			actor.setActorName(name);
+			act.setActorName(name);
 			System.out.println("Enter Charecter Name");
 			String charName = scan.next();
-			actor.setCharecterName(charName);
+			act.setCharecterName(charName);
 			System.out.println("Enter Actor Type");
 			String actType = scan.next();
-			actor.setActorType(actType);
+			act.setActorType(actType);
 			actors.add(act);
 		}
 		return actors;
+	}
+	public Script assignScript(Movie movie)
+	{
+		Script script=scriptWriterController.createScript(movie);
 	}
 	
 }
