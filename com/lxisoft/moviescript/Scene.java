@@ -1,7 +1,8 @@
+import java.util.*;
 public class Scene
 {
 	private int sceneNumber;
-	private ArrayList<Action> actions=new ArrayList<Action>()
+	private ArrayList<Action> actions=new ArrayList<Action>();
 	
 	public void setSceneNumber(int sceneNo)	
 	{
@@ -9,7 +10,7 @@ public class Scene
 	}
 	public int getSceneNumber()
 	{
-		retun this.sceneNumber;
+		return this.sceneNumber;
 	}
 	public void setActions(ArrayList<Action> act)	
 	{
@@ -17,6 +18,6 @@ public class Scene
 	}
 	public ArrayList<Action> getActions()
 	{
-		retun this.actions;
+		return this.actions;
 	}
 }

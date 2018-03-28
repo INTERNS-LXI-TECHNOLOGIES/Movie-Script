@@ -1,12 +1,21 @@
+import java.util.*;
 public class Movie
 {
+	private Director director;
 	private String movieName;
 	private String movieType;
-	private Director director;
 	private ScriptWriter scriptWriter;
-	Private Script script;
-	private ArrayList<Actor> actors=new ArrayList<Actor>();
+	private ArrayList<Actor> actors = new ArrayList<Actor>();
+	private Script script;
 	
+	public void setDirector(Director direct)
+	{
+		this.director=direct;
+	}
+	public Director getDirector()
+	{
+		return this.director;
+	}
 	public void setMovieName(String name)
 	{
 		this.movieName=name;
@@ -22,14 +31,6 @@ public class Movie
 	public String getMovieType()
 	{
 		return this.movieType;
-	}
-	public void setDirector(Director direct)
-	{
-		this.director=direct;
-	}
-	public Director getDirector()
-	{
-		return this.director;
 	}
 	public void setScriptWriter(ScriptWriter scriptor)
 	{
@@ -51,7 +52,7 @@ public class Movie
 	{
 		this.actors=filmActors;
 	}
-	public Arraylist<Actor> getActors()
+	public ArrayList<Actor> getActors()
 	{
 		return this.actors;
 	}
