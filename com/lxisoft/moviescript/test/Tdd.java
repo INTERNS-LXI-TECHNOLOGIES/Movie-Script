@@ -1,5 +1,11 @@
-package com.lxisoft.moviescript.test
+package com.lxisoft.moviescript.test;
 import com.lxisoft.moviescript.controller.MovieController;
+
+/* 	cd notepad-workspace\LXI\Movie-Script
+
+	javac com\lxisoft\moviescript\test\Tdd.java
+
+	java com.lxisoft.moviescript.test.Tdd */
 
 public class Tdd {
 	
@@ -14,6 +20,7 @@ public class Tdd {
 		movieController.createScript();
 		movieController.assignActors();
 		movieController.createMovie();
+		movieController.displayMovieDetails();
 		movieController.displayScript();
 	}
 }

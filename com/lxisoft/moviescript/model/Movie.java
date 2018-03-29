@@ -9,6 +9,15 @@ public class Movie {
 	private List<Actor> actorList;
 	private Script script;
 	
+	//Constructor
+	public Movie(Director director, ScriptWriter scriptWriter, List<Actor> actorList, Script script){
+		this.director = director;
+		this.scriptWriter = scriptWriter;
+		this.actorList = actorList;
+		this.script = script;
+	}
+	
+	//Getters and Setters
 	public String getName() {
 		return name;
 	}

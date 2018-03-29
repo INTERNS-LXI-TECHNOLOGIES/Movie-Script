@@ -21,7 +21,7 @@ public class Action{
 	//To String
 	@Override
 	public String toString(){
-		return characterName+": "+dialogue;		
+		return " 	"+characterName+":	"+dialogue;		
 	}
 
 }

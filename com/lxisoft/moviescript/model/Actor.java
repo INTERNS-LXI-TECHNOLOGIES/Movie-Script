@@ -2,9 +2,7 @@ package com.lxisoft.moviescript.model;
 
 public class Actor{
 
-	private String realName;
-	private String characterName;
-	private String role;
+	private String realName, characterName, role;
 	
 	public Actor(){}
 	
@@ -30,5 +28,11 @@ public class Actor{
 	}
 	public void setRole(String role) {
 		this.role = role;
+	}
+	
+	//To String
+	@Override
+	public String toString(){
+		return role+": "+realName+" ("+characterName+")";		
 	}
 }

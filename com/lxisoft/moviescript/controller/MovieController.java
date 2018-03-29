@@ -1,18 +1,18 @@
 package com.lxisoft.moviescript.controller;
-import com.lxisoft.moviescript.model.*
+import com.lxisoft.moviescript.model.*;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class MovieController {
 		
 	private DialogueBook dialogueBook;
 	private Director director;
-	List<Actor> actorList;
-	Script script;
+	private ScriptWriter scriptWriter;
+	private List<Actor> actorList;
+	private Script script;
 	public static final String MOVIE_NAME = "NARASIMHAM";
-	Movie movie;
-	ScriptWriterController scriptWriterController;
+	private Movie movie;
+	private DirectorController directorController;
 	
 
 	//Create Director
@@ -25,27 +25,22 @@ public class MovieController {
 		scriptWriter = new ScriptWriter("Sreenivasan");
 	}
 	
-	//Set Character NamespaceAlias
-	public void setCharacterNames(){
-		
-	}
-	
 	//Create Dialog-Book	
 	public void createDialogueBook(){
-		dialogueBook = new DialogueBook({"comedyDialogue1","comedyDialogue2"},
-									{"romanticDialogue1","romanticDialogue2"},
-									{"heroicDialogue1","heroicDialogue2"},
-									{"villainousDialogue1","villainousDialogue2"});
+		dialogueBook = new DialogueBook(new String[] {"comedyDialogue1","comedyDialogue2","comedyDialogue3","comedyDialogue4"},
+										new String[] {"romanticDialogue1","romanticDialogue2","romanticDialogue3","romanticDialogue4"},
+										new String[] {"heroicDialogue1","heroicDialogue2","heroicDialogue3","heroicDialogue4"},
+										new String[] {"villainousDialogue1","villainousDialogue2","villainousDialogue3","villainousDialogue4"});
 	}
 	
 	//Set Character Names and Roles
 	public void setCharacters(){
 		actorList = new ArrayList<Actor>();
 		
-		Actor actor1 = new Actor("A","hero");
-		Actor actor2 = new Actor("B","heroine");
-		Actor actor3 = new Actor("C","villain");
-		Actor actor4 = new Actor("D","comedian");
+		Actor actor1 = new Actor("Bond","hero");
+		Actor actor2 = new Actor("Queen","heroine");
+		Actor actor3 = new Actor("Hulk","villain");
+		Actor actor4 = new Actor("Lol","comedian");
 		
 		actorList.add(actor1);
 		actorList.add(actor2);
@@ -56,11 +51,13 @@ public class MovieController {
 	//Create Script
 	public void createScript(){
 		script = new Script();
-		scriptWriterController.writeScript(script);
+		ScriptWriterController scriptWriterController = new ScriptWriterController();
+		scriptWriterController.writeScript(script, actorList, dialogueBook);
 	}
 	
 	//Assign Actors
 	public void assignActors(){
+		directorController = new DirectorController();
 		directorController.assignActors(actorList);
 	}
 	
@@ -70,12 +67,27 @@ public class MovieController {
 		directorController.assignMovieName(movie,MOVIE_NAME);
 	}	
 	
-	pulic void displayScript(){
+	//Display Movie Details
+	public void displayMovieDetails(){
+		System.out.println("\n\n	MOVIE: "+movie.getName());
+		System.out.println("\n 	DIRECTOR: "+movie.getDirector().getName());
+		System.out.println("\n	SCRIPTWRITER: "+movie.getScriptWriter().getName());
+		for(Actor actor : movie.getActorList()){
+			System.out.println("\n	"+actor);
+		}
+		System.out.println("\n	====================");
+	}
+	
+	//Display Script
+	public void displayScript(){
 		script = movie.getScript();
 		List<Scene> sceneList =  script.getSceneList();
+		int sceneNumber;
 		for(Scene scene : sceneList){
-			System.out.println(scene.getNumber());
-			System.out.println(scene.getType());
+			sceneNumber = scene.getNumber();
+			System.out.print("\n 	Scene No: "+sceneNumber);
+			System.out.println(" | Type: "+scene.getType());
+			System.out.println("	====================");
 			for(Action action : scene.getActionList()){
 				System.out.println(action);
 			}

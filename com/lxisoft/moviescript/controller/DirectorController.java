@@ -1,5 +1,5 @@
 package com.lxisoft.moviescript.controller;
-import com.lxisoft.moviescript.model.*
+import com.lxisoft.moviescript.model.*;
 import java.util.List;
 
 public class DirectorController{
@@ -12,10 +12,15 @@ public class DirectorController{
 	//Assign Actors
 	public void assignActors(List<Actor> actorList){
 		for (Actor actor : actorList){
-			if(actor.getCharacrterName()=="A"){actor.setRealName("Shiv")}
-			else if(actor.getCharacrterName()=="B"){actor.setRealName("Jeny")}
-			else if(actor.getCharacrterName()=="C"){actor.setRealName("Hilfiger")}
-			else if(actor.getCharacrterName()=="D"){actor.setRealName("Lol")}
+			if(actor.getCharacterName()=="Bond"){
+				actor.setRealName("Shiv");
+			}else if(actor.getCharacterName()=="Queen"){
+				actor.setRealName("Jeny");
+			}else if(actor.getCharacterName()=="Hulk"){
+				actor.setRealName("Hilfiger");
+			}else if(actor.getCharacterName()=="Lol"){
+				actor.setRealName("Jagathy");
+			}
 		}
 	}
 }

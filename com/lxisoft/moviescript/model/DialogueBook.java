@@ -4,7 +4,7 @@ public class DialogueBook{
 	
 	private String[] comicArray, romanticArray, heroicArray, villainousArray;
 	
-	public DialogBook(String[] comicArray, String[] romanticArray, String[] heroicArray, String[] villainousArray){
+	public DialogueBook(String[] comicArray, String[] romanticArray, String[] heroicArray, String[] villainousArray){
 		this.comicArray = comicArray;
 		this.romanticArray = romanticArray;
 		this.heroicArray = heroicArray;
