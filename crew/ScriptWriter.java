@@ -1,5 +1,8 @@
 package com.lxisoft.moviescript.crew;
-import com.java.util.Scanner;
+import com.lxisoft.moviescript.movie.Script;
+import com.lxisoft.moviescript.movie.Scene;
+import java.util.Scanner;
+import java.util.ArrayList;
 public class ScriptWriter{
 
 	Scanner scan=new Scanner(System.in);
@@ -18,22 +21,17 @@ public class ScriptWriter{
 		setName(name);
 	}
 
-	public void setScript(ArrayList<Actor> actor){
+	//public void setScript(ArrayList<Actor> actor){
+		public void setScript(){
 		
-		//ArrayList <ArrayList<Animal>> animals=new ArrayList<ArrayList<Animal>>();
-		ArrayList<ArrayList <Scene>> dialogues=new ArrayList<ArrayList<Scene>>();
-		//ArrayList <Animal> tigers=new ArrayList <Animal>();
+
+		script.setScenes();
+		/*	ArrayList<ArrayList <Scene>> dialogues=new ArrayList<ArrayList<Scene>>();
+		
 		
 		System.out.println("enter the number of scenes :");
 		int noOfScenes=scan.nextInt();
-		
-	
-		
-		
-		
-		
-		
-		
+		*/
 		
 		
 	}

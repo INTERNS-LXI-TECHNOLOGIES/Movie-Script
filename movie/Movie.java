@@ -11,7 +11,7 @@ public class Movie{
 	private Director director;
     private ScriptWriter scriptWriter;
 	private ArrayList<Actor> actors;
-	private Script script=new Script();
+	//private Script script;
 	
 	Scanner scan=new Scanner(System.in);
 	
@@ -40,33 +40,16 @@ public class Movie{
 		System.out.println("Director name        :"+director.getName());
 		System.out.println("ScriptWriter name    :"+scriptWriter.getName());
 	
-		 actors=director.casting();
+		actors=director.casting();
 		displayActors(actors);
-		
-		
-		
-		
-		
+		scriptWriter.setScript();
+	
 		
 	}
 	
-	/*public void addActors(){
-		int x=0;
-		do{
-			actors.add(new Actor());
-			System.out.println("enter the name of the actor");
-			actors.get(actors.size()-1).setActorName(scan.next());
-			System.out.println("enter the name of the character");
-			actors.get(actors.size()-1).setCharacterName(scan.nextdi());
-			System.out.println("do you want to add new actor");
-			x=scan.nextInt();
-		}while(x==1);
-		
-		
-	}*/
 	
 	public void displayActors(ArrayList<Actor> actors){
-		System.out.println("Actor name        "+"               charcter name");
+		System.out.println("Actor name        "+"   charcter name");
 		for(Actor tempActor:actors){
 			System.out.print(" "+tempActor.getActorName());
 			System.out.println("                     "+tempActor.getCharacterName());
