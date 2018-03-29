@@ -3,11 +3,7 @@ import java.util.*;
 public class Director
 {
 	private String directorName;
-	private Actor hero;
-	private Actor comicActor;
-	private Actor villain;
-	private Actress heroin;
-	private Actress comicActress;
+	
 	private int noOfActors;
 	private int noOfActress;
 	
@@ -19,14 +15,7 @@ public class Director
 	   {
 		 return directorName; 
 	   }
-      public void setHero(Actor hero)
-	  {
-		  this.hero = hero;
-	  }		  
-	  public Actor getHero()
-	  {
-		  return hero;
-	  }
+     
        public void setNoOfActors(int noOfActors)
 	   {
 		   this.noOfActors = noOfActors;
@@ -48,25 +37,43 @@ public class Director
 		
 		
 		
-		public void roleCasting()
+		public void roleCasting(Hero[] hero,Villain[] villains,Heroin[] heroins)
 		{
-			getHero().setCharacterName("KARTHIKEYAN");
-			setNoOfActors((int) (Math.random()*5)+1);
-			setNoOfActress((int) (Math.random()*5)+1);
-			setHero(new Hero());
-			getHero().setRole("HERO");
-			getHero().setActorName("MOHANLAL");
-			System.out.print("\n          "+getHero().getRole()+":"+getHero().getActorName()+" AS "+getHero().getCharacterName()+"         ");
-			
-			
-			
-		}
+			 setNoOfActors((int) (Math.random()*5)+1);
+			 setNoOfActress((int) (Math.random()*5)+1);
 		
-		public void sceneSelection()
-		{
 			
+			 hero[0].setCharacterName("KARTHIKEYAN");
+			 hero[0].setRole("HERO");
+			 hero[0].setActorName("MOHANLAL");
+			 hero[1].setCharacterName("NEELAKANDAN");
+			 hero[1].setRole("HERO");
+			 hero[1].setActorName("MOHANLAL");
+			 villains[0].setCharacterName("SEKHARAN NAMBIAR");
+			 villains[0].setRole("VILLAIN");
+			 villains[0].setActorName("NAPOLEAN");
+			 villains[1].setCharacterName("RAJENDRAN NAMBIAR");
+			 villains[1].setRole("VILLAIN");
+			 villains[1].setActorName("VIJAYA RAGHAVAN");
+			   heroins[0].setActressName("VASUNDHARA");
+			   heroins[0].setCharacterName("JANAKI");
+			   heroins[0].setRole("HEROIN");
+			   
+			   
+			for(int i = 0;i<2;i++)
+			{				
+			 System.out.print("\n                       "+hero[i].getRole()+":"+hero[i].getActorName()+" AS "+hero[i].getCharacterName()+"         ");
+	         System.out.print("\n                       "+villains[i].getRole()+":"+villains[i].getActorName()+" AS "+villains[i].getCharacterName()+"           ");		
+		     System.out.print("\n                       "+heroins[i].getRole()+":"+heroins[i].getActressName()+" AS "+heroins[i].getCharacterName()+"               ");
+		    }
+		}
+		public void sceneSelection(ScriptWriter scriptwriter,Hero hero)
+		{
+			scriptwriter.createScript(hero);
+		
 		}
 		
 	
    
-}
+   
+ }

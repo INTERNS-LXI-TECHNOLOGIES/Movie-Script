@@ -1,9 +1,11 @@
 package com.lxisoft.moviescript.movie;
-public class Actor
+import java.util.*;
+public abstract class Actor
 {
   private String actorName;
   private String characterName;
   private String role;
+  private ArrayList<Scene> scenes = new ArrayList<Scene>();
 
    public void setActorName(String actorName)
     {
@@ -29,4 +31,16 @@ public class Actor
    {
 	   return role;
    }
+    public void setScenes(ArrayList<Scene> scenes)
+  {
+	  this.scenes = scenes;
+  }
+  public ArrayList<Scene> getScenes()
+  {
+	  return scenes;
+  }
+  
+  public abstract void deliveringScenes(ArrayList<Scene> scenes);
+  
+  
 }
