@@ -24,11 +24,10 @@ public class Movie{
 		System.out.println("DIRECTOR NAME	        : "+director.getDirector());
 		System.out.println("SCRIPT WRITER NAME	: "+scriptWriter.getScriptWriter());
 		System.out.println("-------------ACTORS----------------");
-		//addActors();
-		//displayActor();
 		actors=director.casting();
 		displayActors(actors);
 		scriptWriter.writeScript(actors);
+		
 		
 		
 	}
@@ -70,5 +69,6 @@ public class Movie{
 		return name;
 	
 	}
+	
 
 }
