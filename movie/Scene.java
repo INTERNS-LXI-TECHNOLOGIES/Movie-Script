@@ -1,4 +1,5 @@
 package com.lxisoft.moviescript.movie;
+import com.lxisoft.moviescript.crew.Actor;
 import java.util.ArrayList;
 public class Scene{
 	private int number;
@@ -14,7 +15,7 @@ public class Scene{
 	}
 	
 	
-	public void setDialogue(){
+	public void setDialogue(ArrayList<Actor> actors){
 		dialogues[0]="mothalalii..... janga jaga jaga";
 		dialogues[1]="ath avark ariayalo.... daddykum mummykum";
 		dialogues[2]="soniyaaaa.... poratte..";
@@ -25,14 +26,15 @@ public class Scene{
 		dialogues[7]="kaana kazhukanonnum enne kond patla... nahi nnu paranja nahi... podo hey";
 		dialogues[8]="chor.... chor";
 		dialogues[9]="vegam theerthal adutha pani tharam";
-		displayDialogue(dialogues);
+		displayDialogue(dialogues,actors);
 		
 	}
-	public void displayDialogue(String[] dialogues){
-		int x=(int)(Math.random()*10);
+	public void displayDialogue(String[] dialogues,ArrayList<Actor> actors){
+		int x=(int)((Math.random()*10)+1);
 		for(int i=0;i<x;i++){
 			int y=(int)(Math.random()*10);
-			System.out.println("  "+dialogues[y]);
+			int z=(int)(Math.random()*actors.size());
+			System.out.println(actors.get(z).getCharacterName()+" :"+"  "+dialogues[y]);
 		}
 		
 	}

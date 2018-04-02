@@ -42,7 +42,7 @@ public class Movie{
 	
 		actors=director.casting();
 		displayActors(actors);
-		scriptWriter.setScript();
+		scriptWriter.setScript(actors);
 	
 		
 	}
