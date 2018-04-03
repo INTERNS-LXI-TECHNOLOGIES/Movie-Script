@@ -29,4 +29,8 @@ public class Actress
 	{
 		return characterName;
 	}
+	
+	public void deliveringScenes(String scenes)
+	{
+	}
 }

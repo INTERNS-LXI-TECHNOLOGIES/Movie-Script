@@ -13,7 +13,7 @@ public class ScreenPlay
    public ArrayList<Scene> getScenes()
    {
 	  return scenes;
-   }
+   }[]
   
   
   
@@ -30,16 +30,25 @@ public class ScreenPlay
 			 }while(scenes.size()<=3);
 			 //for(int j=0;j<2;j++)
 			 //{
-				 int j = 0;
-			//do
-			//{	
-               // for(int k = 0;k<3;k++)
+				// int j = 0;
+			
+               //for(int k = 0;k<3;k++)
 				//{					
-			        
-					hero[0].deliveringScenes(scenes.get(j).getDialogues().get(0));
-					//Villain[j].deliveringScenes(scenes.)
+			       //for(int l = 0;l<2;l++)
+				   //{					   
+					hero[0].deliveringScenes(scenes.get(0).getDialogues().get(0);
+					villains[0].deliveringScenes(scenes.get(0).getDialogues().get(1));
+					heroins[0].deliveringScenes(scenes.get(0).getDialogues().get(2));
+					hero[1].deliveringScenes(scenes.get(1).getDialogues().get(3));
+					villains[1].deliveringScenes(scenes.get(1).getDialogues().get(4));
+					heroins[1].deliveringScenes(scenes.get(1).getDialogues().get(5));
+					hero[0].deliveringScenes(scenes.get(2).getDialogues().get(6));
+					villains[1].deliveringScenes(scenes.get(2).getDialogues().get(7));
+					hero[0].deliveringScenes(scenes.get(2).getDialogues().get(8));
+					
+				   //}
 				//}
-			 //}
+		
          }
 
 }
