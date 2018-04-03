@@ -58,6 +58,9 @@ public class Director
 			   heroins[0].setActressName("VASUNDHARA");
 			   heroins[0].setCharacterName("JANAKI");
 			   heroins[0].setRole("HEROIN");
+			   heroins[1].setActressName("BHANUMATHI");
+			   heroins[1].setCharacterName("REVATHI");
+			   heroins[1].setRole("GUEST APPEARENCE");
 			   
 			   
 			for(int i = 0;i<2;i++)
@@ -67,9 +70,9 @@ public class Director
 		     System.out.print("\n                       "+heroins[i].getRole()+":"+heroins[i].getActressName()+" AS "+heroins[i].getCharacterName()+"               ");
 		    }
 		}
-		public void sceneSelection(ScriptWriter scriptwriter,Hero hero)
+		public void sceneSelection(ScriptWriter scriptwriter,Hero[] hero,Villain[] villains,Heroin[] heroins)
 		{
-			scriptwriter.createScript(hero);
+			scriptwriter.createScript(hero,villains,heroins);
 		
 		}
 		

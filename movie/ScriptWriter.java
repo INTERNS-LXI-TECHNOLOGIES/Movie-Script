@@ -54,11 +54,11 @@ public class ScriptWriter
 		  dialogueBook.add("Poyanalukalude Chudaalaparmbinte Pazchediyayi Njn Matram Baaki Ennado Maranamennod Daya Kanikkunth");
 		  dialogueBook.add("Eswaran Ninte munnil Vilakkay Teliyumpol Athinte Nerkk Thupparuth");
 	  }
-      public void createScript(Hero hero)
+      public void createScript(Hero[] hero,Villain[] villains,Heroin[] heroins)
 	  {
 		  setScreenPlay(new ScreenPlay());
 
-		  screenPlay.createScenes(dialogueBook,hero);
+		  screenPlay.createScenes(dialogueBook,hero,villains,heroins);
 		  
 	  }
 

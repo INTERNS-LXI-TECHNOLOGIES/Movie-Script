@@ -4,10 +4,10 @@ public class Movie
 	private String movieName;
 	private Director director;
 	private ScriptWriter scriptwriter;
-	private Actor[] heroes = new Hero[2];
-	private Actor[] comicActors = new ComicActor[2];
-	private Actor[] villains = new Villain[2];
-	private Actress[] heroins = new Heroin[2];
+	private Hero[] heroes = new Hero[2];
+	//private Actor[] comicActors = new ComicActor[2];
+	private Villain[] villains = new Villain[2];
+	private Heroin[] heroins = new Heroin[2];
 	private Actress[] comicActresses = new ComicActress[2];
 
 	
@@ -36,35 +36,35 @@ public class Movie
 		  return scriptwriter;
 	  }
 	  
-       public void setHero(Actor[] hero)
+       public void setHero(Hero[] hero)
 	  {
 		  this.heroes = hero;
 	  }		  
-	  public Actor[] getHero()
+	  public Hero[] getHero()
 	  {
 		  return heroes;
 	  }
-	  public void setComicActor(Actor[] comicActor)
+	  /*public void setComicActor(Actor[] comicActor)
 	  {
 		  this.comicActors = comicActor;
 	  }
 	  public Actor[] getComicActor()
 	  {
 		  return comicActors;
-	  }
-	  public void setVillain(Actor[] villain)
+	  }*/
+	  public void setVillain(Villain[] villain)
 	  {
 		  this.villains = villain;
 	  }
-	  public Actor[] getVillain()
+	  public Villain[] getVillain()
 	  {
 		  return villains;
 	  }
-	  public void setHeroin(Actress[] heroin)
+	  public void setHeroin(Heroin[] heroin)
 	  {
 		  this.heroins = heroin;
 	  }
-	  public Actress[] getHeroin()
+	  public Heroin[] getHeroin()
 	  {
 		  return heroins;
 	  }
@@ -89,15 +89,15 @@ public class Movie
              getScriptWriter().setScriptWriterName("RANJITH");
 			 System.out.print("                            ScriptWriter Name: "+getScriptWriter().getScriptWriterName()+"                           \n");
 			 
-			 for(i= 0;i<2;i++)
+			 for(int i= 0;i<2;i++)
 			 {
-			   heroes[i].setHero(new Hero());
-			   comicActors[i].setComicActor(new ComicActor());
-			   villains[i].setVillain(new Villain());
-			   heroins[i].setHeroin(new Heroin());
+			   heroes[i] = new Hero();
+			  // comicActors[i].setComicActor(new ComicActor());
+			   villains[i] = new Villain();
+			   heroins[i] = new Heroin();
 			}
-             getDirector().roleCasting(this.heroes,this.villains,this.heroins);  
-			 getDirector().sceneSelection(this.scriptwriter,hero);
+               getDirector().roleCasting(this.heroes,this.villains,this.heroins);  
+			   getDirector().sceneSelection(this.scriptwriter,heroes,villains,heroins);
 		  }
 
 }

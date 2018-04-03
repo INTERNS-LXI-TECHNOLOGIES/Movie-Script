@@ -40,7 +40,7 @@ public abstract class Actor
 	  return scenes;
   }
   
-  public abstract void deliveringScenes(ArrayList<Scene> scenes);
+  public abstract void deliveringScenes(String scenes);
   
   
 }

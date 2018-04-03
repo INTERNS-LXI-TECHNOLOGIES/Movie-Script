@@ -10,9 +10,21 @@ public class Scene
    {
 	 this.dialogues = dialogues;
    }
-   public ArrayList<String> getDialogues()
+   public  ArrayList<String> getDialogues()
    {
      return dialogues;
    }	 
+ 
+ /*public void setDialogues(String dialogue)
+ {
+	 dialogues.add(dialogue);
+ }	
+
+public String deliveringDialogues()
+
+{
+dialogues.get(dialogues.size()-1).setDialogues();
+	
+}*/	
  
 }

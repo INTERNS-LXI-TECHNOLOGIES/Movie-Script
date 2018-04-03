@@ -17,18 +17,29 @@ public class ScreenPlay
   
   
   
-      public void  createScenes(ArrayList<String> dialogueBook,Hero hero)
+      public void  createScenes(ArrayList<String> dialogueBook,Hero[] hero,Villain[] villains,Heroin[] heroins)
         {
            do
 			{	
+			    scenes.add(new Scene());
 			  for(int i = 0;i < 3 ;i++)
 			  {
-			    scenes.add(new Scene());
 			    scenes.get(scenes.size()-1).getDialogues().add(dialogueBook.get((int)Math.random()*dialogueBook.size()));
 			  }
 			 //scenes.add(new Scene());
 			 }while(scenes.size()<=3);
-			  hero.deliveringScenes(scenes);
+			 //for(int j=0;j<2;j++)
+			 //{
+				 int j = 0;
+			//do
+			//{	
+               // for(int k = 0;k<3;k++)
+				//{					
+			        
+					hero[0].deliveringScenes(scenes.get(j).getDialogues().get(0));
+					//Villain[j].deliveringScenes(scenes.)
+				//}
+			 //}
          }
 
 }
