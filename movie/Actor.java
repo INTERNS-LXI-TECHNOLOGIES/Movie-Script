@@ -1,4 +1,6 @@
 package com.lxisoft.moviescript.movie;
+import java.io.*;
+import com.sun.media.sound.*;
 import java.util.*;
 public abstract class Actor
 {
@@ -40,7 +42,7 @@ public abstract class Actor
 	  return scenes;
   }
   
-  public abstract void deliveringScenes(String scenes);
+  public abstract void deliveringScenes(JavaSoundAudioClip scenes);
   
   
 }

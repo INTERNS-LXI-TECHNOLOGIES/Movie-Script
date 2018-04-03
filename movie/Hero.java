@@ -6,13 +6,15 @@ import com.sun.media.sound.*;
 public class Hero extends Actor
 {
 
-   public void deliveringScenes(String scenes)
+   public void deliveringScenes(JavaSoundAudioClip scenes)
    {
 	   //do
 	   //{
-		   
+		  try{ 
 		   System.out.println("\n");
-		   System.out.println(scenes);
+		   scenes.play();
+		   Thread.sleep(100000);
+		  }catch(Exception e){System.out.print("...");}
 	    // System.out.println(scenes.get(scenes.size()-1).getDialogues());
 	  // }while(scenes.size()<=3);
 	// try{  

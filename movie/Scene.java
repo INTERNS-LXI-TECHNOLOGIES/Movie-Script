@@ -4,13 +4,13 @@ import com.sun.media.sound.*;
 import java.util.*;
 public class Scene
 {
-  private ArrayList<String> dialogues = new ArrayList<String>();
+  private ArrayList<JavaSoundAudioClip> dialogues = new ArrayList<JavaSoundAudioClip>();
  
-   public void createDialogues(ArrayList<String> dialogues)
+   public void createDialogues(ArrayList<JavaSoundAudioClip> dialogues)
    {
 	 this.dialogues = dialogues;
    }
-   public  ArrayList<String> getDialogues()
+   public  ArrayList<JavaSoundAudioClip> getDialogues()
    {
      return dialogues;
    }	 

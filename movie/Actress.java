@@ -1,4 +1,6 @@
 package com.lxisoft.moviescript.movie;
+import java.io.*;
+import com.sun.media.sound.*;
 public  abstract class Actress
 {
    private  String actressName;
@@ -30,6 +32,6 @@ public  abstract class Actress
 		return characterName;
 	}
 	
-	public abstract void deliveringScenes(String scenes);
+	public abstract void deliveringScenes(JavaSoundAudioClip scenes);
 	
 }
