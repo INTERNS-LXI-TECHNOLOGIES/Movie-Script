@@ -10,6 +10,8 @@ public class Hero extends Actor
    {
 	   //do
 	   //{
+		   
+		   System.out.println("\n");
 		   System.out.println(scenes);
 	    // System.out.println(scenes.get(scenes.size()-1).getDialogues());
 	  // }while(scenes.size()<=3);

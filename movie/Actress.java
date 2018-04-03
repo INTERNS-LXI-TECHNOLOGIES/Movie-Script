@@ -1,5 +1,5 @@
 package com.lxisoft.moviescript.movie;
-public class Actress
+public  abstract class Actress
 {
    private  String actressName;
    private String role;
@@ -30,7 +30,6 @@ public class Actress
 		return characterName;
 	}
 	
-	public void deliveringScenes(String scenes)
-	{
-	}
+	public abstract void deliveringScenes(String scenes);
+	
 }

@@ -13,18 +13,34 @@ public class ScreenPlay
    public ArrayList<Scene> getScenes()
    {
 	  return scenes;
-   }[]
+   }
   
   
   
       public void  createScenes(ArrayList<String> dialogueBook,Hero[] hero,Villain[] villains,Heroin[] heroins)
         {
+				    ArrayList<Integer> random = new ArrayList<Integer>();
+					boolean isTrue = false;
            do
 			{	
 			    scenes.add(new Scene());
 			  for(int i = 0;i < 3 ;i++)
 			  {
-			    scenes.get(scenes.size()-1).getDialogues().add(dialogueBook.get((int)Math.random()*dialogueBook.size()));
+				  
+					  int a = (int)  (Math.random()*dialogueBook.size());
+					 // System.out.print("random"+a);
+					//  for(int m = 0;m<random.size();m++)
+					// {
+					  // if(random.get(a)!= random.get(m))
+					  // {
+					    // random.add(a);
+			            scenes.get(scenes.size()-1).getDialogues().add(dialogueBook.get(a));
+						// isTrue = true;
+					 //  }
+					   
+					// }
+					 
+				 // }while(isTrue==true);
 			  }
 			 //scenes.add(new Scene());
 			 }while(scenes.size()<=3);
@@ -35,16 +51,23 @@ public class ScreenPlay
                //for(int k = 0;k<3;k++)
 				//{					
 			       //for(int l = 0;l<2;l++)
-				   //{					   
-					hero[0].deliveringScenes(scenes.get(0).getDialogues().get(0);
+				   //{
+                    System.out.print("\n                            SCENE   1                    \n");
+			   
+					hero[0].deliveringScenes(scenes.get(0).getDialogues().get(0));
 					villains[0].deliveringScenes(scenes.get(0).getDialogues().get(1));
 					heroins[0].deliveringScenes(scenes.get(0).getDialogues().get(2));
-					hero[1].deliveringScenes(scenes.get(1).getDialogues().get(3));
-					villains[1].deliveringScenes(scenes.get(1).getDialogues().get(4));
-					heroins[1].deliveringScenes(scenes.get(1).getDialogues().get(5));
-					hero[0].deliveringScenes(scenes.get(2).getDialogues().get(6));
-					villains[1].deliveringScenes(scenes.get(2).getDialogues().get(7));
-					hero[0].deliveringScenes(scenes.get(2).getDialogues().get(8));
+					//System.out.print(hero.length);
+					//System.out.print(scenes.size());
+					//System.out.print(scenes.get(1).getDialogues().size());
+					System.out.print("\n                            SCENE   2                   \n");
+					hero[1].deliveringScenes(scenes.get(1).getDialogues().get(0));
+					villains[1].deliveringScenes(scenes.get(1).getDialogues().get(1));
+					heroins[1].deliveringScenes(scenes.get(1).getDialogues().get(2));
+					System.out.print("\n                            SCENE   3                   \n");
+					hero[0].deliveringScenes(scenes.get(2).getDialogues().get(1));
+					villains[1].deliveringScenes(scenes.get(2).getDialogues().get(0));
+					hero[0].deliveringScenes(scenes.get(2).getDialogues().get(2));
 					
 				   //}
 				//}

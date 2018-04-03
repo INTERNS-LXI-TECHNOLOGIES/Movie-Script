@@ -58,6 +58,7 @@ public class ScriptWriter
 	  {
 		  setScreenPlay(new ScreenPlay());
 
+		  //System.out.print(dialogueBook.get(1));
 		  screenPlay.createScenes(dialogueBook,hero,villains,heroins);
 		  
 	  }

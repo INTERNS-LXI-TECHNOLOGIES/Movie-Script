@@ -4,6 +4,7 @@ public class Heroin extends Actress
 {
 	public void deliveringScenes(String scenes)
    {
+	   System.out.print("\n");;
 	   System.out.println(scenes);
 	// try{  
 	    // System.out.println(scenes.get(scenes.size()-1).getDialogues().get(getDialogues().size()-1));
