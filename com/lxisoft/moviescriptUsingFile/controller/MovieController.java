@@ -2,6 +2,10 @@ package com.lxisoft.moviescript.controller;
 import com.lxisoft.moviescript.model.*;
 import java.util.List;
 import java.util.ArrayList;
+import java.nio.charset.Charset;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class MovieController {
 		
@@ -27,10 +31,26 @@ public class MovieController {
 	
 	//Create Dialogue-Book	
 	public void createDialogueBook(){
-		dialogueBook = new DialogueBook(new String[] {"comedyDialogue1","comedyDialogue2","comedyDialogue3","comedyDialogue4"},
-										new String[] {"romanticDialogue1","romanticDialogue2","romanticDialogue3","romanticDialogue4"},
-										new String[] {"heroicDialogue1","heroicDialogue2","heroicDialogue3","heroicDialogue4"},
-										new String[] {"villainousDialogue1","villainousDialogue2","villainousDialogue3","villainousDialogue4"});
+		dialogueBook = new DialogueBook();
+		Path pathComedy = FileSystems.getDefault().getPath("D:\\notepad-workspace\\LXI\\Movie-Script\\com\\lxisoft\\moviescriptUsingFile\\file", "comedy.txt");
+		List<String> lines = Files.readAllLines(path, Charset.forName("UTF-8"));
+		String[] arr = lines.toArray(new String[lines.size()]);
+		dialogueBook.setComicArray(arr);
+		
+		pathComedy = FileSystems.getDefault().getPath("D:\\notepad-workspace\\LXI\\Movie-Script\\com\\lxisoft\\moviescriptUsingFile\\file", "romantic.txt");
+		List<String> lines = Files.readAllLines(path, Charset.forName("UTF-8"));
+		String[] arr = lines.toArray(new String[lines.size()]);
+		dialogueBook.setRomanticArray(arr);
+		
+		pathComedy = FileSystems.getDefault().getPath("D:\\notepad-workspace\\LXI\\Movie-Script\\com\\lxisoft\\moviescriptUsingFile\\file", "villainous.txt");
+		List<String> lines = Files.readAllLines(path, Charset.forName("UTF-8"));
+		String[] arr = lines.toArray(new String[lines.size()]);
+		dialogueBook.setHeroicArray(arr);
+		
+		pathComedy = FileSystems.getDefault().getPath("D:\\notepad-workspace\\LXI\\Movie-Script\\com\\lxisoft\\moviescriptUsingFile\\file", "heroic.txt");
+		List<String> lines = Files.readAllLines(path, Charset.forName("UTF-8"));
+		String[] arr = lines.toArray(new String[lines.size()]);
+		dialogueBook.setVillainousArray(arr);
 	}
 	
 	//Set Character Names and Roles

@@ -1,0 +1,4 @@
+heroicDialogue1 
+heroicDialogue2 
+heroicDialogue3 
+heroicDialogue4

@@ -5,10 +5,6 @@ public class DialogueBook{
 	private String[] comicArray, romanticArray, heroicArray, villainousArray;
 	
 	//Constructor
-	public DialogueBook(){
-		
-	}
-	
 	public DialogueBook(String[] comicArray, String[] romanticArray, String[] heroicArray, String[] villainousArray){
 		this.comicArray = comicArray;
 		this.romanticArray = romanticArray;
