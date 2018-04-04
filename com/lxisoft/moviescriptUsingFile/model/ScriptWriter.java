@@ -1,4 +1,4 @@
-package com.lxisoft.moviescript.model;
+package com.lxisoft.moviescriptUsingFile.model;
 
 public class ScriptWriter{
 	

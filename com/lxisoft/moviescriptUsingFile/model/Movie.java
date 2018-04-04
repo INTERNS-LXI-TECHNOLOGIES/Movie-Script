@@ -1,4 +1,4 @@
-package com.lxisoft.moviescript.model;
+package com.lxisoft.moviescriptUsingFile.model;
 import java.util.List;
 
 public class Movie {

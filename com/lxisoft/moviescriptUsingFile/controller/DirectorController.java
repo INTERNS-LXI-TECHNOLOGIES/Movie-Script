@@ -1,5 +1,5 @@
-package com.lxisoft.moviescript.controller;
-import com.lxisoft.moviescript.model.*;
+package com.lxisoft.moviescriptUsingFile.controller;
+import com.lxisoft.moviescriptUsingFile.model.*;
 import java.util.List;
 
 public class DirectorController{

@@ -1,0 +1,5 @@
+comedyDialogue1 comedyDialogue2 comedyDialogue3 comedyDialogue4
+heroicDialogue1 heroicDialogue2 heroicDialogue3 heroicDialogue4
+romanticDialogue1 romanticDialogue2 romanticDialogue3 romanticDialogue4
+villainousDialogue1 villainousDialogue2 villainousDialogue3 villainousDialogue4
+

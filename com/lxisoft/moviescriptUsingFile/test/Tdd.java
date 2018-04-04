@@ -1,11 +1,11 @@
-package com.lxisoft.moviescript.test;
-import com.lxisoft.moviescript.controller.MovieController;
+package com.lxisoft.moviescriptUsingFile.test;
+import com.lxisoft.moviescriptUsingFile.controller.MovieController;
 
 /* 	cd notepad-workspace\LXI\Movie-Script
 
 	javac com\lxisoft\moviescriptUsingFile\test\Tdd.java
 
-	java com.lxisoft.moviescript.test.Tdd */
+	java com.lxisoft.moviescriptUsingFile.test.Tdd */
 
 public class Tdd {
 	

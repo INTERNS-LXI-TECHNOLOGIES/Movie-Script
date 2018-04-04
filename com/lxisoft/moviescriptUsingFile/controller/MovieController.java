@@ -1,11 +1,12 @@
-package com.lxisoft.moviescript.controller;
-import com.lxisoft.moviescript.model.*;
+package com.lxisoft.moviescriptUsingFile.controller;
+import com.lxisoft.moviescriptUsingFile.model.*;
 import java.util.List;
 import java.util.ArrayList;
 import java.nio.charset.Charset;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.io.*;
 
 public class MovieController {
 		
@@ -14,14 +15,14 @@ public class MovieController {
 	private ScriptWriter scriptWriter;
 	private List<Actor> actorList;
 	private Script script;
-	public static final String MOVIE_NAME = "NARASIMHAM";
+	public static final String MOVIE_NAME = "Jumanji";
 	private Movie movie;
 	private DirectorController directorController;
 	
 
 	//Create Director
 	public void createDirector(){
-		director = new Director("Sathyan Anthikaad");
+		director = new Director("Sathyan Anthikad");
 	}
 	
 	//Create Script-Writer
@@ -32,25 +33,39 @@ public class MovieController {
 	//Create Dialogue-Book	
 	public void createDialogueBook(){
 		dialogueBook = new DialogueBook();
-		Path pathComedy = FileSystems.getDefault().getPath("D:\\notepad-workspace\\LXI\\Movie-Script\\com\\lxisoft\\moviescriptUsingFile\\file", "comedy.txt");
-		List<String> lines = Files.readAllLines(path, Charset.forName("UTF-8"));
-		String[] arr = lines.toArray(new String[lines.size()]);
-		dialogueBook.setComicArray(arr);
-		
-		pathComedy = FileSystems.getDefault().getPath("D:\\notepad-workspace\\LXI\\Movie-Script\\com\\lxisoft\\moviescriptUsingFile\\file", "romantic.txt");
-		List<String> lines = Files.readAllLines(path, Charset.forName("UTF-8"));
-		String[] arr = lines.toArray(new String[lines.size()]);
-		dialogueBook.setRomanticArray(arr);
-		
-		pathComedy = FileSystems.getDefault().getPath("D:\\notepad-workspace\\LXI\\Movie-Script\\com\\lxisoft\\moviescriptUsingFile\\file", "villainous.txt");
-		List<String> lines = Files.readAllLines(path, Charset.forName("UTF-8"));
-		String[] arr = lines.toArray(new String[lines.size()]);
-		dialogueBook.setHeroicArray(arr);
-		
-		pathComedy = FileSystems.getDefault().getPath("D:\\notepad-workspace\\LXI\\Movie-Script\\com\\lxisoft\\moviescriptUsingFile\\file", "heroic.txt");
-		List<String> lines = Files.readAllLines(path, Charset.forName("UTF-8"));
-		String[] arr = lines.toArray(new String[lines.size()]);
-		dialogueBook.setVillainousArray(arr);
+		try{
+		FileReader fr = new FileReader("D:\\notepad-workspace\\LXI\\Movie-Script\\com\\lxisoft\\moviescriptUsingFile\\file\\dialogue.txt");
+		BufferedReader br = new BufferedReader(fr); // make a Reader
+		String s;
+		String[] words;
+		while( (s = br.readLine()) != null) {	// read data
+			words = s.split("\\s+");
+			
+			/* TO REMOVE PUNCTUATIONS: (NOT NEEDED HERE)
+			for (int i = 0; i < words.length; i++) {
+				words[i] = words[i].replaceAll("[^\\w]", ""); 
+				 
+					To replace everything that is not word character, use negated character class:
+						.replaceAll("[^\\w]", "");
+					or
+						.replaceAll("\\W", "");
+					Both of them will replace the characters apart from [a-zA-Z0-9_]. If you want to replace the underscore too, then use:
+						[\\W_]	
+			}
+			*/
+			
+			if (s.contains("comedyDialogue1")) {		
+				dialogueBook.setComicArray(words);
+            } else if (s.contains("romanticDialogue1")) {		
+				dialogueBook.setRomanticArray(words);
+            } else if (s.contains("heroicDialogue1")) {		
+				dialogueBook.setHeroicArray(words);
+            } else if (s.contains("villainousDialogue1")) {		
+				dialogueBook.setVillainousArray(words);
+            }
+		}
+		br.close();
+		} catch(IOException e){}
 	}
 	
 	//Set Character Names and Roles

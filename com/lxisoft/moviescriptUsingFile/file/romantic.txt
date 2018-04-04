@@ -1,4 +1,0 @@
-romanticDialogue1 
-romanticDialogue2 
-romanticDialogue3 
-romanticDialogue4
