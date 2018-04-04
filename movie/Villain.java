@@ -13,10 +13,6 @@ public class Villain extends Actor
       scenes.play();
 	  Thread.sleep(200000);
 	   }catch(Exception e){System.out.print("...");}
-	// try{  
-	      //System.out.println(scenes.get(scenes.size()-1).getDialogues().get(getDialogues().size()-1));
-	     // Thread.sleep(300000);
-	   // }catch(Exception e){System.out.print("...");}
   }
 
 

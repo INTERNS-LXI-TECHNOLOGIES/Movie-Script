@@ -11,10 +11,7 @@ public class Heroin extends Actress
 	   scenes.play();
 	   Thread.sleep(30000);
 	   }catch(Exception e){System.out.print("...");}
-	// try{  
-	    // System.out.println(scenes.get(scenes.size()-1).getDialogues().get(getDialogues().size()-1));
-	     // Thread.sleep(300000);
-	   // }catch(Exception e){System.out.print("...");}
+	
    }
 
 

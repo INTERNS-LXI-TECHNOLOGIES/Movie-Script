@@ -62,11 +62,11 @@ public class ScreenPlay
 					//System.out.print(scenes.size());
 					//System.out.print(scenes.get(1).getDialogues().size());
 					System.out.print("\n                            SCENE   2                   \n");
-					hero[1].deliveringScenes(scenes.get(1).getDialogues().get(0));
+					villains[0].deliveringScenes(scenes.get(1).getDialogues().get(0));
 					//villains[1].deliveringScenes(scenes.get(1).getDialogues().get(1));
 					//heroins[1].deliveringScenes(scenes.get(1).getDialogues().get(2));
 					System.out.print("\n                            SCENE   3                   \n");
-					hero[0].deliveringScenes(scenes.get(2).getDialogues().get(0));
+					heroins[0].deliveringScenes(scenes.get(2).getDialogues().get(0));
 					//villains[1].deliveringScenes(scenes.get(2).getDialogues().get(2));
 					//hero[0].deliveringScenes(scenes.get(2).getDialogues().get(2));
 					
