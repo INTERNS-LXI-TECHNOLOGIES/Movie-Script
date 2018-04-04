@@ -17,6 +17,22 @@ public class MovieController
 		ArrayList<Actor> actors = directorController.decideActors();
 		movie.setActors(actors);
 		Script script=directorController.assignScript(movie);
+		movie.setScript(script);	
+	}
+	public void displayMovie()
+	{
 		
+		System.out.print("Script of the Movie");
+		System.out.println("----------------------");
+		for(Scene s:movie.getScript().getScene())
+		{
+			for(Action a:s.getActions())
+			{
+				System.out.print(a.getCharecterName()+"("+a.getDialogueType()+")"+":"+a.getDialogueContent());
+				System.out.println();
+			}
+			System.out.println("---------End of a scene--------");
+		}
+		System.out.println("________The End_________");
 	}
 }

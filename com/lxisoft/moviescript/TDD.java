@@ -4,5 +4,6 @@ public class TDD
 	{
 		MovieController movieController = new MovieController();
 		movieController.createMovie();
+		movieController.displayMovie();
 	}
 }

@@ -55,9 +55,11 @@ public class DirectorController
 		}
 		return actors;
 	}
-	public Script assignScript(Movie movie)
+	public Script assignScript(Movie mov)
 	{
-		Script script=scriptWriterController.createScript(movie);
+		scriptWriterController=new ScriptWriterController();
+		Script script=scriptWriterController.createScript(mov);
+		return script;
 	}
 	
 }
