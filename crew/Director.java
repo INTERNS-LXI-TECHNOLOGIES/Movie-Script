@@ -12,7 +12,7 @@ public class Director{
 		
 	}
 	public void setDirector(String name){
-		
+		 
 		this.name=name;
 	}
 	

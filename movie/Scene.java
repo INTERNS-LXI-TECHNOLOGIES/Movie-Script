@@ -1,4 +1,5 @@
 package com.lxisoft.moviescript.movie;
+import  com.lxisoft.moviescript.crew.Actor;
 import java.util.ArrayList;
 public class Scene{
 	
@@ -28,16 +29,17 @@ public class Scene{
 		  dialogues[7]="chor.... chorr....";
 		  dialogues[8]="ghana ghana.. ahh ne poy ghana kazhikikko";
 		  dialogues[9]="hmmm military ahh military illatha vedi ochakkyokke kelkum";
-		  dialogueDisplay(dialogues);
+		  dialogueDisplay(dialogues,actors);
 		
 	}
 	
-	public void dialogueDisplay(String[] dialogues){
+	public void dialogueDisplay(String[] dialogues,ArrayList<Actor> actors){
 		
 		int x = (int) (Math.random() * 10);
 		for(int i=0;i<x;i++){
 			int y = (int) (Math.random() * 10);
-			System.out.println(""+dialogues[y]);
+			int z=(int)(Math.random()*actors.size());
+			System.out.println(actors.get(z).getCharacterName()+""+dialogues[y]);
 		
 		}
 	}
