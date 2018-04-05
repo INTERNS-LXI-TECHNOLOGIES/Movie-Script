@@ -43,6 +43,6 @@ public abstract class Actor
   }
   
   public abstract void deliveringScenes(JavaSoundAudioClip scenes);
-  
-  
+  //,ArrayList<BufferedReader> dialogues);
+ 
 }
