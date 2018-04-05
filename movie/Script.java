@@ -1,5 +1,6 @@
 package com.lxisoft.moviescript.movie;
 import com.lxisoft.moviescript.movie.Scene;
+import com.lxisoft.moviescript.crew.Actor;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Script{
@@ -8,41 +9,21 @@ public class Script{
 	Scanner scan=new Scanner(System.in);
 	
 	
-	public void settingScenes(){
+	
+	public void setScene(Scene scene){
 		
-		System.out.println("-----------------*******************-----------------");
-		System.out.println("ENTER NUMBER OF SCENES: ");
-		int noOfScenes=scan.nextInt();
-		for(int i=1;i<=noOfScenes;i++){
-			
-			//System.out.println("---SCENE "+i+"---"); 
-			scenes.add(new Scene());
-			scenes.get(scenes.size()-1).setNumber(scenes.size());
-			System.out.println("");
-			System.out.println("ADD DIALOGUES TO SCENE "+i);
-			scenes.get(scenes.size()-1).setDialogues();
-		}
-		
+		scenes.add(scene);
 	}
-	public void setScenes(ArrayList<Scene> scenes){
-		
-		this.scenes=scenes;
-	}
-	public ArrayList<Scene> getScenes(){
+	public ArrayList<Scene> getScene(){
 		
 		return scenes;
 	}
 		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public void displayScenes(){
+		for(Scene tempScene:scenes){
+			tempScene.displayScene();
+		}
+	}
 	
 	
 }

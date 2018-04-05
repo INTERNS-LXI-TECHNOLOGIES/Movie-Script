@@ -11,6 +11,7 @@ public class Movie{
 	private String name;
 	private Director director;
 	private ScriptWriter scriptWriter;
+	private Script script;
 	private ArrayList<Actor> actors;
 	Scanner scan=new Scanner(System.in);
 	
@@ -22,12 +23,12 @@ public class Movie{
 		System.out.println("===================================================================");
 		System.out.println("MOVIE NAME		: "+getName());
 		System.out.println("DIRECTOR NAME	        : "+director.getDirector());
-		System.out.println("SCRIPT WRITER NAME	: "+scriptWriter.getScriptWriter());
+		System.out.println("SCRIPT WRITER NAME	: "+scriptWriter.getName());
 		System.out.println("-------------ACTORS----------------");
-		actors=director.casting();
+		actors=director.casting();                                                                                                               
 		displayActors(actors);
-		scriptWriter.writeScript(actors);
-		
+		script=scriptWriter.writeScript(actors);
+		script.displayScenes();
 		
 		
 	}

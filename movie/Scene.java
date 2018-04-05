@@ -4,7 +4,9 @@ import java.util.ArrayList;
 public class Scene{
 	
 	private int number;
-	String[] dialogues=new String[10];
+	//String[] dialogues=new String[10];
+	ArrayList<String> dialogue=new ArrayList<String>();
+	ArrayList<Actor> characterSequence;
 	
 	public void setNumber(int number){
 		
@@ -16,38 +18,33 @@ public class Scene{
 		return number;
 		
 	}
-	
-	public void setDialogues(){
+	public void setDialogues(String dialogue){
 		
-		  dialogues[0]="mothalali...janga jaga jaga";
-		  dialogues[1]="ath avarkariyalo Daddy kum Mummy kum";
-		  dialogues[2]="ella Masavum undallo 1 nam thiyathi";
-		  dialogues[3]="enikk samsarikan mathram evide arum ellathayille";
-		  dialogues[4]="are soniyya----!!soniyya poratte...";
-		  dialogues[5]="njan entha kuppinn vanna bhoothuo";
-		  dialogues[6]="vegam theerthal!! udane adutha pani tharam";
-		  dialogues[7]="chor.... chorr....";
-		  dialogues[8]="ghana ghana.. ahh ne poy ghana kazhikikko";
-		  dialogues[9]="hmmm military ahh military illatha vedi ochakkyokke kelkum";
-		  dialogueDisplay(dialogues,actors);
+		this.dialogue.add(dialogue);
+	}
+	public ArrayList<String> getDialogues(){
+		
+		return dialogue;
+	}
+
+	
+	public void setCharacterSequence(ArrayList<Actor> characterSequence){
+		
+		this.characterSequence=characterSequence;
+		
+		
 		
 	}
-	
-	public void dialogueDisplay(String[] dialogues,ArrayList<Actor> actors){
+	public void displayScene(){
 		
-		int x = (int) (Math.random() * 10);
-		for(int i=0;i<x;i++){
-			int y = (int) (Math.random() * 10);
-			int z=(int)(Math.random()*actors.size());
-			System.out.println(actors.get(z).getCharacterName()+""+dialogues[y]);
-		
+		System.out.println(" ");
+		System.out.println("--SCENE NUMBER:   "+number);
+		for(int i=0;i<characterSequence.size();i++)
+		{
+			System.out.println(characterSequence.get(i).getCharacterName()+" : "+dialogue.get(i));
+			
 		}
 	}
-	
-	public String[] sendDialogues(){
-		return dialogues;
-	}
-	
 	
 	  
 	
