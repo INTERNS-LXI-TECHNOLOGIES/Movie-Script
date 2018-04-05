@@ -21,9 +21,18 @@ public class MovieController
 	}
 	public void displayMovie()
 	{
-		
-		System.out.print("Script of the Movie");
-		System.out.println("----------------------");
+		System.out.println("Film Title     :"+movie.getMovieName());
+		System.out.println("Director  	   :"+movie.getDirector().getDirectorName());
+		System.out.println("Type of Movie  :"+movie.getMovieType());
+		System.out.println("Script Writer  :"+movie.getScriptWriter().getScriptWriterName());
+		System.out.println("--------------------------------");
+		System.out.println("Actors ");
+		for(Actor a:movie.getActors())
+		{
+			System.out.println(a.getActorName()+"("+a.getCharecterName()+")");
+		}
+		System.out.println("Script of the Movie");
+		System.out.println("============================");
 		for(Scene s:movie.getScript().getScene())
 		{
 			for(Action a:s.getActions())

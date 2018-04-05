@@ -33,6 +33,7 @@ public class DirectorController
 		scriptWriter = new ScriptWriter();
 		System.out.println("Enter the Nmae of Script Writer");
 		String name = scan.next();
+		scriptWriter.setScriptWriterName(name);
 		return scriptWriter;
 	}
 	public ArrayList<Actor> decideActors()

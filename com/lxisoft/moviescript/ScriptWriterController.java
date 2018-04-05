@@ -15,10 +15,10 @@ public class ScriptWriterController
 		{
 			actions = new ArrayList<Action>();
 			scene=new Scene();
-			int numberOfComicDialogue = (int)(Math.random()*5);
-			int numberOfHeroicDialogue = (int)(Math.random()*5);
-			int numberOfVillainicDialogue = (int)(Math.random()*5);
-			int numberOfRomanticDialogue = (int)(Math.random()*5);
+			int numberOfComicDialogue = (int)(Math.random()*10);
+			int numberOfHeroicDialogue = (int)(Math.random()*10);
+			int numberOfVillainicDialogue = (int)(Math.random()*10);
+			int numberOfRomanticDialogue = (int)(Math.random()*10);
 			int numberOfActions = numberOfComicDialogue+numberOfHeroicDialogue+numberOfVillainicDialogue+numberOfRomanticDialogue;
 			for(int j=0;j<numberOfActions;j++)
 			{
@@ -31,6 +31,13 @@ public class ScriptWriterController
 					String dialogue = dialogueBook.getComic().get(dialogueIndex);
 					action.setDialogueContent(dialogue);
 					action.setDialogueType("comic");
+					for(Actor a:movie.getActors())
+					{
+						if(a.getActorType()=="comic")
+						{
+							action.setCharecterName(a.getCharecterName());
+						}
+					}
 					for(Actor a:movie.getActors())
 					{
 						if(a.getActorType()=="comic")
@@ -52,6 +59,13 @@ public class ScriptWriterController
 					{
 						if(a.getActorType()=="heroic")
 						{
+							action.setCharecterName(a.getCharecterName());
+						}
+					}
+					for(Actor a:movie.getActors())
+					{
+						if(a.getActorType()=="heroic")
+						{
 							action.setDialogueType(a.getCharecterName());
 						}
 					}
@@ -69,6 +83,13 @@ public class ScriptWriterController
 					{
 						if(a.getActorType()=="villainic")
 						{
+							action.setCharecterName(a.getCharecterName());
+						}
+					}
+					for(Actor a:movie.getActors())
+					{
+						if(a.getActorType()=="villainic")
+						{
 							action.setDialogueType(a.getCharecterName());
 						}
 					}
@@ -82,6 +103,13 @@ public class ScriptWriterController
 					String dialogue = dialogueBook.getRomantic().get(dialogueIndex);
 					action.setDialogueContent(dialogue);
 					action.setDialogueType("romantic");
+					for(Actor a:movie.getActors())
+					{
+						if(a.getActorType()=="romantic")
+						{
+							action.setCharecterName(a.getCharecterName());
+						}
+					}
 					for(Actor a:movie.getActors())
 					{
 						if(a.getActorType()=="romantic")

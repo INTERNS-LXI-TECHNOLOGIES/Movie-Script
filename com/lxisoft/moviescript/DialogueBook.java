@@ -40,12 +40,12 @@ public class DialogueBook
 		villainic.add("villainic 9");
 		villainic.add("villainic 10");
 		
-		romantic.add("romantic 1");
-		romantic.add("romantic 2");
-		romantic.add("romantic 3");
-		romantic.add("romantic 4");
-		romantic.add("romantic 5");
-		romantic.add("romantic 6");
+		romantic.add("ninne aadyamayi kandath mutha ishtathilaayi");
+		romantic.add("Nammalonna randallaa");
+		romantic.add("Eni njanundakum koode");
+		romantic.add("I love you dear");
+		romantic.add("Marikkan ennem koode koottayirunnille..");
+		romantic.add("");
 		romantic.add("romantic 7");
 		romantic.add("romantic 8");
 		romantic.add("romantic 9");
