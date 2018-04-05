@@ -41,14 +41,14 @@ public class Movie{
 	
 	public void displayActors(ArrayList<Actor> actors){
 		System.out.println("================ACTORS====================");
-		System.out.println("ACTOR NAME     "    +  "    CHARACTER NAME");
-		System.out.println("----------     "   +  "    --------------");
+		System.out.println("ACTOR NAME     "    +  "    CHARACTER NAME" + "CHARACTER TYPE");
+		System.out.println("----------     "   +  "    --------------" + "    --------------");
 		for(Actor tempActor:actors){
 			
 			
 			System.out.print("  "+tempActor.getActorName());
-			System.out.println("                  "+tempActor.getCharacterName());
-			
+			System.out.print("                  "+tempActor.getCharacterName());
+			System.out.println("                "+tempActor.getCharacterType());
 			
 		}
 		
