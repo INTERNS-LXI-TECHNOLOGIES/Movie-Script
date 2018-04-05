@@ -2,6 +2,16 @@ package com.lxisoft.moviescript.crew;
 import com.lxisoft.moviescript.movie.Script;
 import com.lxisoft.moviescript.movie.Scene;
 import com.lxisoft.moviescript.crew.Actor;
+import com.lxisoft.moviescript.crew.CharacterType;
+import java.io.BufferedInputStream;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.ArrayList;
 public class ScriptWriter{
@@ -66,7 +76,7 @@ public class ScriptWriter{
 				 y=(int)(Math.random()*10);
 				 z=(int)(Math.random()*actors.size());
 				characterSequence.add(actors.get(z));
-				scene.setDialogues(generateDialogue());
+				scene.setDialogues(generateDialogue(actors.get(z).getCharacterType()));
 			}
 			else
 			{
@@ -78,7 +88,7 @@ public class ScriptWriter{
 	
 				}while(actors.get(z)==characterSequence.get(characterSequence.size()-1));
 				characterSequence.add(actors.get(z));
-				scene.setDialogues(generateDialogue());
+				scene.setDialogues(generateDialogue(actors.get(z).getCharacterType()));
 			}
 			scene.setCharacterSequence(characterSequence);
 			
@@ -88,8 +98,8 @@ public class ScriptWriter{
 		
 	}
 	
-	public String generateDialogue( ){
-		String[] dialogues=new String[12];
+	public String generateDialogue(CharacterType characterType){
+		/*String[] dialogues=new String[12];
 		dialogues[0]="mothalalii..... janga jaga jaga";
 		dialogues[1]="ath avark ariayalo.... daddykum mummykum";
 		dialogues[2]="soniyaaaa.... poratte..";
@@ -100,9 +110,51 @@ public class ScriptWriter{
 		dialogues[7]="kaana kazhukanonnum enne kond patla... nahi nnu paranja nahi... podo hey";
 		dialogues[8]="chor.... chor";
 		dialogues[9]="vegam theerthal adutha pani tharam";
-		return dialogues[(int)(Math.random()*10)];
+		return dialogues[(int)(Math.random()*10)];*/
 		//displayDialogue(dialogues,actors);
 		
+		String path;
+		switch(characterType){
+			case COMEDIAN:
+				path="F:/000-Workspace/com/lxisoft/moviescript/dialogue/Comedian.txt";
+				
+			case HERO:
+				path="F:/000-Workspace/com/lxisoft/moviescript/dialogue/Heroic.txt";
+				
+			break;
+			case HEROINE:
+				path="F:/000-Workspace/com/lxisoft/moviescript/dialogue/Heroinic.txt";
+				
+			break;
+				
+			case VILLAIN:
+				path="F:/000-Workspace/com/lxisoft/moviescript/dialogue/Villain.txt";
+			break;
+			default:
+				path="F:/000-Workspace/com/lxisoft/moviescript/dialogue/Heroinic.txt";
+			break;
+		}
+			String dialogue=" ";
+				try{
+					BufferedReader br=new BufferedReader(new InputStreamReader(new FileInputStream(path)));
+					int ss=(int) (Math.random()*4);
+					loop:
+					for(int i=0;i<4;i++){
+						dialogue = br.readLine();
+						if(ss==i)
+						{
+							break loop;
+						}
+						//System.out.println(" file "+dialogue);
+					}
+				}
+				catch(IOException e){
+					System.out.println("file doesn't exist");
+					e.printStackTrace();
+				}				
+				
+		
+		return dialogue;
 	}
 	
 }
