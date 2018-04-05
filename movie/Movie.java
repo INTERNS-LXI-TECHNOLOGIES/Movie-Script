@@ -41,6 +41,8 @@ public class Movie{
 			System.out.println("             "+actor.getName()+"  as "+actor.getCharacter().getName());
 		
 		}
+		System.out.println("   Story by "+scriptWriter.getName());
+		System.out.println("       Directed by "+scriptWriter.getName());
 		script.displayScript();
 	
 	}

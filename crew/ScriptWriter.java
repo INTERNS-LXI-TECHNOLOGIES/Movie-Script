@@ -1,4 +1,8 @@
 package com.lxisoft.moviescript.crew;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 import com.lxisoft.moviescript.crew.Actor;
@@ -38,14 +42,7 @@ public ScriptWriter(String name){
 		System.out.print("[] Enter the no of Scenes:");
 		int noOfScenes=scan.nextInt();
 		for(int i=0;i<noOfScenes;i++){
-			ArrayList<Character>sceneCharacters=new ArrayList<Character>();
-			int noOfsceneCharacters=(int)  ((Math.random()*characters.size())+2);
-			for(int j=0;j<noOfsceneCharacters;j++)
-			{
-				int indx=(int)(Math.random()*characters.size());
-				sceneCharacters.add(characters.get(indx));
-			}
-			Scene scene=writeScene(sceneCharacters);
+			Scene scene=writeScene(characters);
 			scene.setNumber(i+1);
 			script.setScene(scene);
 		}
@@ -58,8 +55,23 @@ public ScriptWriter(String name){
 		ArrayList<Character>characters=new ArrayList<Character>();
 		for(int i=0;i<noOfCharacters;i++){
 		
-			System.out.print("["+(i+1)+"] name :");
-			characters.add(new Character(scan.next()));
+			System.out.print("["+(i+1)+"] character name :");
+			Character tempCharacter=new Character(scan.next());
+			characters.add(tempCharacter);
+			System.out.println(" 1)Hero"+"\n"+" 2)Villan"+"\n"+" 3)Comedian"+"\n"+" 4)Heroin");
+			switch(scan.nextInt()){
+				case 1:tempCharacter.setCharacterType(CharacterType.HERO);
+						break;
+				case 2:tempCharacter.setCharacterType(CharacterType.VILLAN);
+						break;
+				case 3:tempCharacter.setCharacterType(CharacterType.COMEDIAN);
+						break;
+				case 4:tempCharacter.setCharacterType(CharacterType.HEROIN);
+						break;
+				default:tempCharacter.setCharacterType(CharacterType.COMEDIAN);
+						break;
+			}
+		
 		
 		}
 		return characters;
@@ -69,7 +81,7 @@ public ScriptWriter(String name){
 		ArrayList<Character>characters=tempCharacters;
 		ArrayList<Dialogue>dialogues=new ArrayList<Dialogue>();
 		ArrayList<Character>characterSequance=new ArrayList<Character>();
-		int noOfDialogues=(int) ((Math.random()*8)+3);
+		int noOfDialogues=(int) ((Math.random()*8)+4);
 		for(int i=0;i<noOfDialogues;i++){
 		  
 			int indxNo=(int) (Math.random()*characters.size());
@@ -77,18 +89,19 @@ public ScriptWriter(String name){
 			if(characterSequance.isEmpty()){	
 				characterSequance.add(characters.get(indxNo));
 				tempDialogue=new Dialogue(i+1);
-				tempDialogue.setDialogue(dialogueGenerator());
+					CharacterType dialogueType=characters.get(indxNo).getCharacterType();
+					tempDialogue.setDialogue(dialogueGenerator(dialogueType));
 				dialogues.add(tempDialogue);
 				}
 				else
 				{
 					
 					do{
-	                        
-							indxNo=(int) (Math.random()*characters.size();                                       
-							tempDialogue=new Dialogue(i+1);	
-							tempDialogue.setDialogue(dialogueGenerator());
-						
+	                
+						indxNo=(int) (Math.random()*characters.size());                                       
+						tempDialogue=new Dialogue(i+1);	
+						CharacterType dialogueType=characters.get(indxNo).getCharacterType();
+						tempDialogue.setDialogue(dialogueGenerator(dialogueType));
 					}while(characters.get(indxNo)==characterSequance.get(characterSequance.size()-1) );
 						characterSequance.add(characters.get(indxNo));
 						dialogues.add(tempDialogue);
@@ -98,10 +111,48 @@ public ScriptWriter(String name){
 			scene.setCharacterSequance(characterSequance);
 			return scene;
 		}
-	public String  dialogueGenerator(){
-		
-		String [] dialogues={"d1","d2","d3","d4","d5","d6"};
-		return dialogues[((int)(Math.random()*6))];
-	
+	public String  dialogueGenerator(CharacterType dialogueType){
+		String file;
+		String dialogue;
+		switch(dialogueType){
+				case HERO:file="E:/0001-workspace/com/lxisoft/moviescript/dialogues/HERO.txt";
+						break;
+				case VILLAN:file="E:/0001-workspace/com/lxisoft/moviescript/dialogues/VILLAN.txt";
+						break;
+				case COMEDIAN:file="E:/0001-workspace/com/lxisoft/moviescript/dialogues/COMEDIAN.txt";
+						break;
+				case HEROIN:file="E:/0001-workspace/com/lxisoft/moviescript/dialogues/HEROIN.txt";
+						break;
+				default:file="E:/0001-workspace/com/lxisoft/moviescript/dialogues/COMEDIAN.txt";
+						break;
+						
+			}
+		dialogue="koiiii";
+		try
+		{
+			BufferedReader br=new BufferedReader(new InputStreamReader(new FileInputStream(file)));
+			int dialogueNo=(int) (Math.random()*4);
+			
+			loop:
+			for(int i=0;i<4;i++)
+			{
+				dialogue=br.readLine();
+				if(i==dialogueNo)
+				{
+					break loop;
+				}
+				
+			}
+			
+		}
+		catch(IOException e)
+		{
+			System.out.println("ERROR: unable to read file " + file);
+			e.printStackTrace();  
+			
+		}
+		//String [] dialogues={"d1","d2","d3","d4","d5","d6"};
+		//return dialogues[((int)(Math.random()*6))];
+		return dialogue;
 	}
 }

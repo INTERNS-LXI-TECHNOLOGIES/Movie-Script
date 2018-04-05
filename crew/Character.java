@@ -3,11 +3,24 @@ import java.util.ArrayList;
 import com.lxisoft.moviescript.movie.*;
 public class Character{
 private String name;
+private CharacterType characterType;
 private ArrayList<Scene>scenes=new ArrayList<Scene>();
+public void  setCharacterType(CharacterType characterType)
+	{
+		
+		this.characterType=characterType;
+		
+	}
+	
+public CharacterType  getCharacterType(){
+	
+		
+		return characterType;
+		
+	}
 public Character(String name){
 		
 	setName(name);
-
 
 	}
 public void setName(String name){
@@ -18,9 +31,5 @@ public String getName(){
 	
 		return name;
 	
-	}
-public void dialogueDelivery(Dialogue dialogue)
-	{
-		System.out.println(" "+name+" :"+dialogue.getDialogue());
-	}
+	} 
 }

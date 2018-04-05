@@ -45,7 +45,7 @@ public class Scene
 	}
 	public void displayScene()
 	{
-		System.out.println("[] Scene:"+number);
+		System.out.println("\n"+"       [] Scene:"+number);
 		
 		for(int i=0;i<dialogues.size();i++){
 		
