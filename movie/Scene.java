@@ -3,8 +3,8 @@ import com.lxisoft.moviescript.crew.Actor;
 import java.util.ArrayList;
 public class Scene{
 	private int number;
-	ArrayList<String> Dialogues=new ArrayList<String>();
-	ArrayList<Actor>characterSequance=new ArrayList<Actor>();
+	ArrayList<String> dialogue=new ArrayList<String>();
+	ArrayList<Actor>characterSequence;
 	
 	public void setSceneNumber(int number){
 		this.number=number;
@@ -13,21 +13,23 @@ public class Scene{
 		return number;
 	}
 	
-	public void setDialogues(String Dialogue){
-		this.dialogue=dialogue;
+	public void setDialogues(String dialogue){
+		this.dialogue.add(dialogue);
 	}
-	public String getDialogues(){
+	public ArrayList<String> getDialogues(){
 		return dialogue;
 	}
+	public void setCharacterSequence(ArrayList<Actor> characterSequence){
+			this.characterSequence=characterSequence;
 	
-	
-
-	public void displayDialogue(String[] dialogues,ArrayList<Actor> actors){
-		int x=(int)((Math.random()*10)+1);
-		for(int i=0;i<x;i++){
-			int y=(int)(Math.random()*10);
-			int z=(int)(Math.random()*actors.size());
-			System.out.println(actors.get(z).getCharacterName()+" :"+"  "+dialogues[y]);
+	}
+	public void displayScene(){
+		System.out.println("\n");
+		System.out.println("Scene number :"+number);
+		System.out.println("\n");
+		for(int i=0;i<characterSequence.size();i++){
+			
+			System.out.println(characterSequence.get(i).getCharacterName()+" :"+"  "+dialogue.get(i));
 		}
 		
 	}

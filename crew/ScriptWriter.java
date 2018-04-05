@@ -9,7 +9,7 @@ public class ScriptWriter{
 	Scanner scan=new Scanner(System.in);
 
 	private String name;
-	Script script=new Script();
+	
 	
 	
 	public void setName(String name){
@@ -23,14 +23,23 @@ public class ScriptWriter{
 	}
 
 	//public void setScript(ArrayList<Actor> actor){
-		public void writeScript(ArrayList<Actor> actors){
-		int x=0;
-		do{
-			script.add(writeScene(actors));
-			System.out.println("do you want to add new scene press 1");
-			x=scan.nextInt();
-			scenes.get(scenes.size()-1).setSceneNumber(scenes.size());
-		}while(x==1);
+		public Script writeScript(ArrayList<Actor> actors){
+			Script script=new Script();	
+			int x=0;
+			do{
+				script.setScene(writeScene(actors));
+				System.out.println("do you want to add new scene press 1");
+				x=scan.nextInt();
+				script.getScene().get(script.getScene().size()-1).setSceneNumber(script.getScene().size());
+				
+			}while(x==1);
+			
+			return script;
+		
+		
+		
+		
+		
 		/*	ArrayList<ArrayList <Scene>> dialogues=new ArrayList<ArrayList<Scene>>();
 		
 		
@@ -44,18 +53,19 @@ public class ScriptWriter{
 	
 	public  Scene writeScene(ArrayList<Actor> actors){
 		
-	
 		System.out.println(" adding new scenes");	
 		Scene scene=new Scene();
-		ArrayList<Actor>characterSequance=new ArrayList<Actor>();
+		ArrayList<Actor>characterSequence=new ArrayList<Actor>();
 			System.out.println("\n");
 			int x=(int)((Math.random()*10)+4);
 			for(int i=0;i<x;i++){
-			if(characterSequance.isEmpty())
+				int y=0;
+				int z=0;
+			if(characterSequence.isEmpty())
 			{
-				int y=(int)(Math.random()*10);
-				int z=(int)(Math.random()*actors.size());
-				characterSequance.add(actors.get(z));
+				 y=(int)(Math.random()*10);
+				 z=(int)(Math.random()*actors.size());
+				characterSequence.add(actors.get(z));
 				scene.setDialogues(generateDialogue());
 			}
 			else
@@ -63,17 +73,17 @@ public class ScriptWriter{
 				do
 				{
 					
-					int y=(int)(Math.random()*10);
-					int z=(int)(Math.random()*actors.size());
+					 y=(int)(Math.random()*10);
+					 z=(int)(Math.random()*actors.size());
 	
-				}while(actors.get(z)==characterSequance.get(characterSequance.size()-1));
-				characterSequance.add(actors.get(z));
+				}while(actors.get(z)==characterSequence.get(characterSequence.size()-1));
+				characterSequence.add(actors.get(z));
 				scene.setDialogues(generateDialogue());
 			}
-			scene.seCharacterSequance(characterSequance);
-			return scene;
+			scene.setCharacterSequence(characterSequence);
+			
 		}
-		
+		return scene;
 			
 		
 	}
@@ -90,7 +100,7 @@ public class ScriptWriter{
 		dialogues[7]="kaana kazhukanonnum enne kond patla... nahi nnu paranja nahi... podo hey";
 		dialogues[8]="chor.... chor";
 		dialogues[9]="vegam theerthal adutha pani tharam";
-		return dialogues[(Math.random()*10)]
+		return dialogues[(int)(Math.random()*10)];
 		//displayDialogue(dialogues,actors);
 		
 	}

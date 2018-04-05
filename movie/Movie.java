@@ -11,7 +11,7 @@ public class Movie{
 	private Director director;
     private ScriptWriter scriptWriter;
 	private ArrayList<Actor> actors;
-	//private Script script;
+	private Script script;
 	
 	Scanner scan=new Scanner(System.in);
 	
@@ -42,8 +42,8 @@ public class Movie{
 	
 		actors=director.casting();
 		displayActors(actors);
-		scriptWriter.setScript(actors);
-	
+		script=scriptWriter.writeScript(actors);
+		script.displayScenes();
 		
 	}
 	
