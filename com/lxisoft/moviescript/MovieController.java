@@ -21,6 +21,8 @@ public class MovieController
 	}
 	public void displayMovie()
 	{
+		String charName=null;
+		System.out.println("=====================================");
 		System.out.println("Film Title     :"+movie.getMovieName());
 		System.out.println("Director  	   :"+movie.getDirector().getDirectorName());
 		System.out.println("Type of Movie  :"+movie.getMovieType());
@@ -37,7 +39,15 @@ public class MovieController
 		{
 			for(Action a:s.getActions())
 			{
-				System.out.print(a.getCharecterName()+"("+a.getDialogueType()+")"+":"+a.getDialogueContent());
+				int t=Integer.parseInt(a.getCharecterName());
+				for(Actor ac:movie.getActors())
+				{
+					if((ac.getActorType())==t)
+					{
+						charName=ac.getCharecterName();
+					}
+				}
+				System.out.print(charName+"("+a.getDialogueType()+")"+"		:"+a.getDialogueContent());
 				System.out.println();
 			}
 			System.out.println("---------End of a scene--------");

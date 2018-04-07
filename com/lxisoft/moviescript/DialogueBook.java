@@ -29,27 +29,27 @@ public class DialogueBook
 		heroic.add("Ale ariyillenkil ivarod chodichal madhi..");
 		heroic.add("aa sare eppo ethi..");
 		
-		villainic.add("villainic 1");
-		villainic.add("villainic 2");
-		villainic.add("villainic 3");
-		villainic.add("villainic 4");
-		villainic.add("villainic 5");
-		villainic.add("villainic 6");
-		villainic.add("villainic 7");
-		villainic.add("villainic 8");
-		villainic.add("villainic 9");
-		villainic.add("villainic 10");
+		villainic.add("Aroda ee kalikkunnath enn OOrkkunnath Nallathaa....");
+		villainic.add("Njankalikure kandathaaa....");
+		villainic.add("Nee iniyum valaranam...");
+		villainic.add("Kali nhan kaanich tharam...");
+		villainic.add("Ne okke shishuvaa....");
+		villainic.add("Theerkkada avne...");
+		villainic.add("Ippo ninne nhan veruthe vidunnu....");
+		villainic.add("Aal puthiyatha lee...Chidich nokk ivarod...");
+		villainic.add("ne okke path janmam janikkanam...");
+		villainic.add("Ninno okke basmamakkan enikkariyam...");
 		
-		romantic.add("ninne aadyamayi kandath mutha ishtathilaayi");
+		romantic.add("Ninne aadyamayi kandath mutha ishtathilaayi");
 		romantic.add("Nammalonna randallaa");
 		romantic.add("Eni njanundakum koode");
 		romantic.add("I love you dear");
 		romantic.add("Marikkan ennem koode koottayirunnille..");
-		romantic.add("");
-		romantic.add("romantic 7");
-		romantic.add("romantic 8");
-		romantic.add("romantic 9");
-		romantic.add("romantic 10");
+		romantic.add("Njan snehikkunnathinte pathiratti enne avan snehikkunnund..");
+		romantic.add("You are my soul...");
+		romantic.add("AArillenkilum njanundakum koode...");
+		romantic.add("You are my siul ...");
+		romantic.add("It is my time to be with you....");
 	}
 	
 	

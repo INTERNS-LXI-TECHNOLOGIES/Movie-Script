@@ -49,8 +49,8 @@ public class DirectorController
 			System.out.println("Enter Charecter Name");
 			String charName = scan.next();
 			act.setCharecterName(charName);
-			System.out.println("Enter Actor Type");
-			String actType = scan.next();
+			System.out.println("Enter Actor Type(1 for Comedian;2 for Hero;3 for Villan;4 for Heroin)");
+			int actType = scan.nextInt();
 			act.setActorType(actType);
 			actors.add(act);
 		}

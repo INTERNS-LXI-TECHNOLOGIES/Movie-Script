@@ -2,7 +2,7 @@ public class Actor
 {
 	private String actorName;
 	private String charecterName;
-	private String actorType;
+	private int actorType;
 	
 	public void setActorName(String name)
 	{
@@ -20,11 +20,11 @@ public class Actor
 	{
 		return this.charecterName;
 	}
-	public void setActorType(String aType)
+	public void setActorType(int aType)
 	{
 		this.actorType=aType;
 	}
-	public String getActorType()
+	public int getActorType()
 	{
 		return this.actorType;
 	}
