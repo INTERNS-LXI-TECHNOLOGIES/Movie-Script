@@ -2,6 +2,15 @@ package com.lxisoft.moviescriptUsingFile.controller;
 import com.lxisoft.moviescriptUsingFile.model.*;
 import java.util.List;
 
+/**
+* The DirectorController class: 
+*	a) assigns Movie name, 
+*	b) assigns Actors 
+*
+* @author  Vyshnav Ramesh
+* @version 1.0
+* @since   05*04-2018 
+*/
 public class DirectorController{
 	
 	//Assign Movie Name

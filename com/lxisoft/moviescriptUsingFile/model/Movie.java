@@ -1,6 +1,16 @@
 package com.lxisoft.moviescriptUsingFile.model;
 import java.util.List;
 
+/**
+* The Movie class contains:
+*	a) instance variable: name, director, scriptWriter, actorList, script
+*	b) constructor: Movie(Director director, ScriptWriter scriptWriter, List<Actor> actorList, Script script
+*	c) method: getName(), setName(), getDirector(), setDirector(), get(), setScriptWriter(), getActorList(), setActorList(), getScript(), setScript()
+*
+* @author  Vyshnav Ramesh
+* @version 1.0
+* @since   05*04-2018 
+*/
 public class Movie {
 	
 	private String name;

@@ -1,5 +1,15 @@
 package com.lxisoft.moviescriptUsingFile.model;
 
+/**
+* The ScriptWriter class contains:
+*	a) instance variable: name
+*	b) constructor: ScriptWriter(String name)
+*	c) method: getName(), setName()
+*
+* @author  Vyshnav Ramesh
+* @version 1.0
+* @since   05*04-2018 
+*/
 public class ScriptWriter{
 	
 	private String name;

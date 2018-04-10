@@ -1,5 +1,15 @@
 package com.lxisoft.moviescriptUsingFile.model;
 
+/**
+* The Actor class contains:
+*	a) instance variable: realName, characterName, role
+*	b) constructor: Actor()), Actor(String characterName, String role)
+*	c) method: getCharacterName, setCharacterName(), getRealName(), setRealName(), getRole(), setRole(). toString()
+*
+* @author  Vyshnav Ramesh
+* @version 1.0
+* @since   05*04-2018 
+*/
 public class Actor{
 
 	private String realName, characterName, role;

@@ -1,5 +1,15 @@
 package com.lxisoft.moviescriptUsingFile.model;
 
+
+/**
+* The Action class contains:
+*	a) instance variable: characterName and dialogue
+*	b) method: getCharacterName(), setCharacterName(), getDialogue(), setDialogue(), toString()
+*
+* @author  Vyshnav Ramesh
+* @version 1.0
+* @since   05*04-2018 
+*/
 public class Action{
 
 	private String characterName, dialogue;

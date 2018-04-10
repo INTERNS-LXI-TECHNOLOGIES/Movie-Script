@@ -4,12 +4,24 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
+/**
+* The ScriptWriterController class: 
+*	a) writes Script, 
+*	b) writes Scenes, 
+*	c) writes Actions
+*
+* @author  Vyshnav Ramesh
+* @version 1.0
+* @since   05*04-2018 
+*/
+
 public class ScriptWriterController{
 	
 	private List<Scene> sceneList;
 	private List<Action> actionList;
 	private Scene scene;
 	private int heroDialogues, heroineDialogues, villainDialogues, comedianDialogues;
+	public static final int ACTION_HEROIC=1, ACTION_HEROINIC=2, ACTION_VILLAINOUS=3, ACTION_COMIC=4;
 	
 	//Write Script
 	public Script writeScript(Script script, List<Actor> actorList, DialogueBook dialogueBook){
@@ -55,23 +67,23 @@ public class ScriptWriterController{
 		return sceneList;
 	}
 	
-	//Write Action
+	//Write Actions
 	private List<Action> writeActions(List<Actor> actorList, DialogueBook dialogueBook){
 		
 		String dialogue, characterName;
 		Action action;
 		actionList = new ArrayList<Action>();
-		int randomIndexNumber, randomActionType, 
+		int randomIndexNumber, randomAction, 
 			totalDialogues = heroDialogues+heroineDialogues+villainDialogues+comedianDialogues;
 		
 		for(int i=1; i<=totalDialogues; i++){			
 			action = new Action();
-			randomIndexNumber = ThreadLocalRandom.current().nextInt(0,4); // Change 4 When DialogueBook is Modified	
-			randomActionType = ThreadLocalRandom.current().nextInt(1,5); // 1 -> hero, 2-> heroine, 3 -> villain, 4 -> comedian
+			randomIndexNumber = ThreadLocalRandom.current().nextInt(0,4); // Change 4 When Dialogue File is Modified	
+			randomAction = ThreadLocalRandom.current().nextInt(1,5); 
 			dialogue=""; 
 			characterName="";
 			
-			if(randomActionType==1 && heroDialogues>0){
+			if(randomAction==ACTION_HEROIC && heroDialogues>0){
 				dialogue = dialogueBook.getHeroicArray()[randomIndexNumber];
 				for(Actor actor : actorList){
 					if(actor.getRole()=="hero"){
@@ -80,7 +92,7 @@ public class ScriptWriterController{
 				}
 				heroDialogues--;
 				
-			} else if(randomActionType==2 && heroineDialogues>0){
+			} else if(randomAction==ACTION_HEROINIC && heroineDialogues>0){
 				dialogue = dialogueBook.getRomanticArray()[randomIndexNumber];
 				for(Actor actor : actorList){
 					if(actor.getRole()=="heroine"){
@@ -89,7 +101,7 @@ public class ScriptWriterController{
 				}
 				heroineDialogues--;
 				
-			} else if(randomActionType==3 && villainDialogues>0){
+			} else if(randomAction==ACTION_VILLAINOUS && villainDialogues>0){
 				dialogue = dialogueBook.getVillainousArray()[randomIndexNumber];
 				for(Actor actor : actorList){
 					if(actor.getRole()=="villain"){
@@ -98,7 +110,7 @@ public class ScriptWriterController{
 				}
 				villainDialogues--;
 				
-			} else if(randomActionType==4 && comedianDialogues>0){
+			} else if(randomAction==ACTION_COMIC && comedianDialogues>0){
 				dialogue = dialogueBook.getComicArray()[randomIndexNumber];
 				for(Actor actor : actorList){
 					if(actor.getRole()=="comedian"){

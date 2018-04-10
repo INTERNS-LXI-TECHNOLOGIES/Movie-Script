@@ -1,5 +1,6 @@
 package com.lxisoft.moviescriptUsingFile.controller;
 import com.lxisoft.moviescriptUsingFile.model.*;
+import com.lxisoft.moviescriptUsingFile.util.*;
 import java.util.List;
 import java.util.ArrayList;
 import java.nio.charset.Charset;
@@ -7,7 +8,24 @@ import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.io.*;
+import java.util.Scanner;
 
+/**
+* The MovieController class: 
+*	a) creates Director, 
+*	b) creates Scriptwriter, 
+*	c) creates DialogueBook,
+*	d) sets Character Names and Roles,
+*	e) creates Script
+*	f) assign Actors
+*	g) creates Movie
+*	h) displays Movie details
+*	i) displays Script
+*
+* @author  Vyshnav Ramesh
+* @version 1.0
+* @since   05*04-2018 
+*/
 public class MovieController {
 		
 	private DialogueBook dialogueBook;
@@ -18,6 +36,8 @@ public class MovieController {
 	public static final String MOVIE_NAME = "Jumanji";
 	private Movie movie;
 	private DirectorController directorController;
+	Scanner scanner;
+	FileUtils fileUtils;
 	
 
 	//Create Director
@@ -30,41 +50,61 @@ public class MovieController {
 		scriptWriter = new ScriptWriter("Sreenivasan");
 	}
 	
+	//Create File
+	public void createFile(){
+		scanner = new Scanner(System.in);
+		fileUtils = FileUtils.getInstance();
+		for(int i =0;i<3;i++){
+			writeFile();
+		}
+	}
+	
+	//Write To File
+	private void writeFile(){
+		String dialogues ="";
+		for(int i=0;i<3;i++){
+			dialogues+=scanner.nextLine()+" ";
+		}
+		dialogues+="\n";
+		fileUtils.create();
+		fileUtils.write(dialogues);
+	}
+	
 	//Create Dialogue-Book	
 	public void createDialogueBook(){
 		dialogueBook = new DialogueBook();
 		try{
-		FileReader fr = new FileReader("D:\\notepad-workspace\\LXI\\Movie-Script\\com\\lxisoft\\moviescriptUsingFile\\file\\dialogue.txt");
-		BufferedReader br = new BufferedReader(fr); // make a Reader
-		String s;
-		String[] words;
-		while( (s = br.readLine()) != null) {	// read data
-			words = s.split("\\s+");
-			
-			/* TO REMOVE PUNCTUATIONS: (NOT NEEDED HERE)
-			for (int i = 0; i < words.length; i++) {
-				words[i] = words[i].replaceAll("[^\\w]", ""); 
-				 
-					To replace everything that is not word character, use negated character class:
-						.replaceAll("[^\\w]", "");
-					or
-						.replaceAll("\\W", "");
-					Both of them will replace the characters apart from [a-zA-Z0-9_]. If you want to replace the underscore too, then use:
-						[\\W_]	
+			FileReader fr = new FileReader("D:\\notepad-workspace\\LXI\\Movie-Script\\com\\lxisoft\\moviescriptUsingFile\\file\\dialogue.txt");
+			BufferedReader br = new BufferedReader(fr); // make a Reader
+			String s;
+			String[] words;
+			while( (s = br.readLine()) != null) {	// read data
+				words = s.split("\\s+");
+				
+				/* TO REMOVE PUNCTUATIONS: (NOT NEEDED HERE)(REGEX USAGE)
+				for (int i = 0; i < words.length; i++) {
+					words[i] = words[i].replaceAll("[^\\w]", ""); 
+					 
+						To replace everything that is not word character, use negated character class:
+							.replaceAll("[^\\w]", "");
+						or
+							.replaceAll("\\W", "");
+						Both of them will replace the characters apart from [a-zA-Z0-9_]. If you want to replace the underscore too, then use:
+							[\\W_]	
+				}
+				*/
+				
+				if (s.contains("comedyDialogue1")) {		
+					dialogueBook.setComicArray(words);
+				} else if (s.contains("romanticDialogue1")) {		
+					dialogueBook.setRomanticArray(words);
+				} else if (s.contains("heroicDialogue1")) {		
+					dialogueBook.setHeroicArray(words);
+				} else if (s.contains("villainousDialogue1")) {		
+					dialogueBook.setVillainousArray(words);
+				}
 			}
-			*/
-			
-			if (s.contains("comedyDialogue1")) {		
-				dialogueBook.setComicArray(words);
-            } else if (s.contains("romanticDialogue1")) {		
-				dialogueBook.setRomanticArray(words);
-            } else if (s.contains("heroicDialogue1")) {		
-				dialogueBook.setHeroicArray(words);
-            } else if (s.contains("villainousDialogue1")) {		
-				dialogueBook.setVillainousArray(words);
-            }
-		}
-		br.close();
+			br.close();
 		} catch(IOException e){}
 	}
 	
