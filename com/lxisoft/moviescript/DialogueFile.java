@@ -6,13 +6,12 @@ import java.io.BufferedReader;
 import java.util.*;
 public class DialogueFile
 {
-	public static void main(String[] args)
-	{
-		DialogueFile df=new DialogueFile();
-		df.createDialogueFiles();
-		df.readDialoguesFromFiles();
-	}
-	public void createDialogueFiles()
+	List<String> list1;
+	List<String> list2;
+	List<String> list3;
+	List<String> list4;
+	
+	DialogueFile()
 	{
 		try
 		{
@@ -48,11 +47,12 @@ public class DialogueFile
 	}
 	public void readDialoguesFromFiles()
 	{
-		List<String> list1=new ArrayList<String>();
-		List<String> list2=new ArrayList<String>();
-		List<String> list3=new ArrayList<String>();
-		List<String> list4=new ArrayList<String>();
+		list1=new ArrayList<String>();
+		list2=new ArrayList<String>();
+		list3=new ArrayList<String>();
+		list4=new ArrayList<String>();
 		BufferedReader br1,br2,br3,br4;
+		try{
 		br1=new BufferedReader(new FileReader("D:\\Movie-Script\\com\\lxisoft\\moviescript\\comicdialogues.txt"));
 		String line;
 		while((line=br1.readLine())!=null)
@@ -78,5 +78,26 @@ public class DialogueFile
 			list4.add(line);
 		}
 		br4.close();
+		}
+		catch(Exception e)
+		{
+			
+		}
+	}
+	public List<String> getComic()
+	{
+		return this.list1;
+	}
+	public List<String> getHeroic()
+	{
+		return this.list2;
+	}
+	public List<String> getVillainic()
+	{
+		return this.list3;
+	}
+	public List<String> getRomantic()
+	{
+		return this.list4;
 	}
 }

@@ -5,7 +5,7 @@ public class Movie
 	private String movieName;
 	private String movieType;
 	private ScriptWriter scriptWriter;
-	private ArrayList<Actor> actors = new ArrayList<Actor>();
+	private List<Actor> actors = new ArrayList<Actor>();
 	private Script script;
 	
 	public void setDirector(Director direct)
@@ -48,11 +48,11 @@ public class Movie
 	{
 		return this.script;
 	}
-	public void setActors(ArrayList<Actor> filmActors)
+	public void setActors(List<Actor> filmActors)
 	{
 		this.actors=filmActors;
 	}
-	public ArrayList<Actor> getActors()
+	public List<Actor> getActors()
 	{
 		return this.actors;
 	}

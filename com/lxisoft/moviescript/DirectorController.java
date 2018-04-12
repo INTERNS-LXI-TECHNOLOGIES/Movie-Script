@@ -5,7 +5,7 @@ public class DirectorController
 	Director director;
 	ScriptWriter scriptWriter;
 	ScriptWriterController scriptWriterController;
-	ArrayList<Actor> actors=new ArrayList<Actor>();
+	List<Actor> actors=new ArrayList<Actor>();
 	Scanner scan = new Scanner(System.in);
 	
 	public Director createDirector()
@@ -36,7 +36,7 @@ public class DirectorController
 		scriptWriter.setScriptWriterName(name);
 		return scriptWriter;
 	}
-	public ArrayList<Actor> decideActors()
+	public List<Actor> decideActors()
 	{
 		System.out.println("Number of Actors in the Movie");
 		int number = scan.nextInt();

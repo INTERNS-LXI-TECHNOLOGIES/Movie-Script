@@ -14,7 +14,7 @@ public class MovieController
 		movie.setMovieType(movieType);
 		ScriptWriter scriptWriter = directorController.decideScriptWriter();
 		movie.setScriptWriter(scriptWriter);
-		ArrayList<Actor> actors = directorController.decideActors();
+		List<Actor> actors = directorController.decideActors();
 		movie.setActors(actors);
 		Script script=directorController.assignScript(movie);
 		movie.setScript(script);	

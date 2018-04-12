@@ -1,13 +1,37 @@
 import java.util.*;
 public class DialogueBook
 {
-	private ArrayList<String> comic=new ArrayList<String>();
-	private ArrayList<String> heroic=new ArrayList<String>();
-	private ArrayList<String> villainic=new ArrayList<String>();
-	private ArrayList<String> romantic=new ArrayList<String>();
+	private List<String> comic=new ArrayList<String>();
+	private List<String> heroic=new ArrayList<String>();
+	private List<String> villainic=new ArrayList<String>();
+	private List<String> romantic=new ArrayList<String>();
+	DialogueFile dFile;
+	
+	/*public void setComic(ArrayList<String> com)
+	{
+		this.comic=com;
+	}
+	public void setHeroic(ArrayList<String> hero)
+	{
+		this.heroic=hero;
+	}
+	public void setVillainic(ArrayList<String> vill)
+	{
+		this.villainic=vill;
+	}
+	public void setRomantic(ArrayList<String> rom)
+	{
+		this.romantic=rom;
+	}*/
 	DialogueBook()
 	{
-		comic.add("Mothalaleeee janka jaka jaka");
+		dFile=new DialogueFile();
+		dFile.readDialoguesFromFiles();
+		this.comic=dFile.getComic();
+		this.heroic=dFile.getHeroic();
+		this.villainic=dFile.getVillainic();
+		this.romantic=dFile.getRomantic();
+		/*comic.add("Mothalaleeee janka jaka jaka");
 		comic.add("Ashane koladichu");
 		comic.add("Bloody gramma vasies");
 		comic.add("dont do dont do");
@@ -49,23 +73,23 @@ public class DialogueBook
 		romantic.add("You are my soul...");
 		romantic.add("AArillenkilum njanundakum koode...");
 		romantic.add("You are my siul ...");
-		romantic.add("It is my time to be with you....");
+		romantic.add("It is my time to be with you....");*/
 	}
 	
 	
-	public ArrayList<String> getComic()
+	public List<String> getComic()
 	{
 		return this.comic;
 	}
-	public ArrayList<String> getHeroic()
+	public List<String> getHeroic()
 	{
 		return this.heroic;
 	}
-	public ArrayList<String> getVillainic()
+	public List<String> getVillainic()
 	{
 		return this.villainic;
 	}
-	public ArrayList<String> getRomantic()
+	public List<String> getRomantic()
 	{
 		return this.romantic;
 	}

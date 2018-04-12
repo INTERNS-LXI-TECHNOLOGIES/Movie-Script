@@ -1,13 +1,14 @@
 import java.util.*;
 public class ScriptWriterController
 {
-	DialogueBook dialogueBook=new DialogueBook();
-	ArrayList<Action> actions;
-	ArrayList<Scene> scenes;
+	DialogueBook dialogueBook;
+	List<Action> actions;
+	List<Scene> scenes;
 	Script script;
 	Scene scene;
 	public Script createScript(Movie movie)
 	{
+		dialogueBook=new DialogueBook();
 		scenes=new ArrayList<Scene>();
 		script=new Script();
 		int numberOfScenes=(int)(Math.random()*10+1);

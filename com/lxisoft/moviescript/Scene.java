@@ -2,7 +2,7 @@ import java.util.*;
 public class Scene
 {
 	private int sceneNumber;
-	private ArrayList<Action> actions=new ArrayList<Action>();
+	private List<Action> actions=new ArrayList<Action>();
 	
 	public void setSceneNumber(int sceneNo)	
 	{
@@ -12,11 +12,11 @@ public class Scene
 	{
 		return this.sceneNumber;
 	}
-	public void setActions(ArrayList<Action> act)	
+	public void setActions(List<Action> act)	
 	{
 		this.actions=act;
 	}
-	public ArrayList<Action> getActions()
+	public List<Action> getActions()
 	{
 		return this.actions;
 	}
