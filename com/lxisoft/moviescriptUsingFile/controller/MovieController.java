@@ -50,7 +50,7 @@ public class MovieController {
 		scriptWriter = new ScriptWriter("Sreenivasan");
 	}
 	
-	//Create File
+	//Create Dialogue File
 	public void createFile(){
 		scanner = new Scanner(System.in);
 		fileUtils = FileUtils.getInstance();
@@ -59,9 +59,10 @@ public class MovieController {
 		}
 	}
 	
-	//Write To File
+	//Write To Dialogue File
 	private void writeFile(){
 		String dialogues ="";
+		System.out.println("\n Enter dialogues: ");
 		for(int i=0;i<3;i++){
 			dialogues+=scanner.nextLine()+" ";
 		}
@@ -73,27 +74,12 @@ public class MovieController {
 	//Create Dialogue-Book	
 	public void createDialogueBook(){
 		dialogueBook = new DialogueBook();
-		try{
-			FileReader fr = new FileReader("D:\\notepad-workspace\\LXI\\Movie-Script\\com\\lxisoft\\moviescriptUsingFile\\file\\dialogue.txt");
-			BufferedReader br = new BufferedReader(fr); // make a Reader
-			String s;
-			String[] words;
-			while( (s = br.readLine()) != null) {	// read data
+		String s;
+		String[] words;
+		try{				
+			fileUtils.open();
+			while( (s = fileUtils.read()) != null) {	// read data
 				words = s.split("\\s+");
-				
-				/* TO REMOVE PUNCTUATIONS: (NOT NEEDED HERE)(REGEX USAGE)
-				for (int i = 0; i < words.length; i++) {
-					words[i] = words[i].replaceAll("[^\\w]", ""); 
-					 
-						To replace everything that is not word character, use negated character class:
-							.replaceAll("[^\\w]", "");
-						or
-							.replaceAll("\\W", "");
-						Both of them will replace the characters apart from [a-zA-Z0-9_]. If you want to replace the underscore too, then use:
-							[\\W_]	
-				}
-				*/
-				
 				if (s.contains("comedyDialogue1")) {		
 					dialogueBook.setComicArray(words);
 				} else if (s.contains("romanticDialogue1")) {		
@@ -104,8 +90,10 @@ public class MovieController {
 					dialogueBook.setVillainousArray(words);
 				}
 			}
-			br.close();
-		} catch(IOException e){}
+			fileUtils.close();
+		} catch(IOException e){
+			e.printStackTrace();
+		}
 	}
 	
 	//Set Character Names and Roles

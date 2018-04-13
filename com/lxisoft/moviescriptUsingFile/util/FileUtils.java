@@ -6,6 +6,7 @@ public class FileUtils{
 	private static FileUtils fileUtils = null;
 	File file;
 	PrintWriter printWriter;
+	BufferedReader bufferedReader;
 	
 	//Singleton
 	private FileUtils(){}
@@ -21,7 +22,7 @@ public class FileUtils{
 			file = new File("D:\\notepad-workspace\\LXI\\Movie-Script\\com\\lxisoft\\moviescriptUsingFile\\file\\file3.txt");
 			printWriter = new PrintWriter(file);
 			System.out.println("\n inside create");
-		}catch(IOException e){
+		} catch(IOException e){
 			e.printStackTrace();
 		}
 	}
@@ -30,9 +31,18 @@ public class FileUtils{
 		printWriter.println(dialogues);
 		printWriter.flush();
 		printWriter.close();
-		System.out.println("\n inside write");
+ 	}
+
+	public void open() throws IOException{
+		FileReader fileReader = new FileReader(file);
+		bufferedReader = new BufferedReader(fileReader);	
+	}
+	
+	public String read() throws IOException{
+		return bufferedReader.readLine();
 	}
 
-
-
+	public void  close() throws IOException{
+		bufferedReader.close();
+	}
 }
